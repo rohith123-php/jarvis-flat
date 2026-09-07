@@ -159,9 +159,9 @@ require_once 'includes/header.php';
                                         <td class="fw-bold text-dark fs-6">₹<?php echo number_format($inv['grand_total'], 2); ?></td>
                                         <td>
                                             <?php if ($inv['status'] === 'Paid'): ?>
-                                                <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-20 px-2.5 py-1.5 rounded-pill"><i class="fa-solid fa-check me-1"></i> Paid</span>
+                                                <span class="badge bg-success text-white px-3 py-1.5 rounded-pill fw-bold" style="background-color: #15803d !important; color: #ffffff !important; font-size: 0.75rem;"><i class="fa-solid fa-check me-1"></i> Paid</span>
                                             <?php else: ?>
-                                                <span class="badge bg-warning bg-opacity-15 text-dark border border-warning border-opacity-30 px-2.5 py-1.5 rounded-pill"><i class="fa-solid fa-clock me-1"></i> Unpaid</span>
+                                                <span class="badge bg-warning text-dark px-3 py-1.5 rounded-pill fw-bold" style="background-color: #f59e0b !important; color: #0f172a !important; font-size: 0.75rem;"><i class="fa-solid fa-clock me-1"></i> Unpaid</span>
                                             <?php endif; ?>
                                         </td>
                                         <td class="text-end">

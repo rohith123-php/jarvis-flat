@@ -115,8 +115,8 @@ try {
                                     <div class="list-group-item px-0 py-3 bg-transparent border-bottom">
                                         <div class="d-flex justify-content-between align-items-center mb-1">
                                             <h6 class="fw-bold text-dark mb-0"><?php echo htmlspecialchars($comp['title']); ?></h6>
-                                            <span class="badge badge-status <?php echo $comp['status'] === 'Resolved' ? 'badge-resolved' : 'badge-pending'; ?>">
-                                                <?php echo $comp['status']; ?>
+                                            <span class="badge <?php echo $comp['status'] === 'Resolved' ? 'badge-resolved' : 'badge-pending'; ?> px-3 py-1.5 rounded-pill fw-bold" style="<?php echo $comp['status'] === 'Resolved' ? 'background-color: #15803d !important; color: #ffffff !important;' : 'background-color: #f59e0b !important; color: #0f172a !important;'; ?> font-size: 0.75rem;">
+                                                <i class="fa-solid <?php echo $comp['status'] === 'Resolved' ? 'fa-circle-check' : 'fa-clock'; ?> me-1"></i> <?php echo htmlspecialchars($comp['status']); ?>
                                             </span>
                                         </div>
                                         <p class="text-muted mb-0 small"><?php echo nl2br(htmlspecialchars($comp['description'])); ?></p>

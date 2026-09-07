@@ -89,8 +89,8 @@ try {
                                         <td class="fw-bold text-success">₹<?php echo number_format($bk['amount_paid'], 2); ?></td>
                                         <td><?php echo date('M d, Y h:i A', strtotime($bk['booking_date'])); ?></td>
                                         <td>
-                                            <span class="badge badge-status badge-vacant">
-                                                Confirmed
+                                            <span class="badge badge-vacant px-3 py-1.5 rounded-pill fw-bold" style="background-color: #15803d !important; color: #ffffff !important; font-size: 0.75rem;">
+                                                <i class="fa-solid fa-circle-check me-1"></i> Confirmed
                                             </span>
                                         </td>
                                     </tr>

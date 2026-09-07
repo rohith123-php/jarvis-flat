@@ -92,7 +92,7 @@ require_once 'includes/header.php';
                             <div class="d-flex justify-content-between align-items-start mb-3">
                                 <div>
                                     <span class="badge bg-light text-dark border me-1"><i class="fa-solid fa-location-dot me-1 text-danger"></i> <?php echo htmlspecialchars($b['city']); ?></span>
-                                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-20"><?php echo htmlspecialchars($b['status']); ?></span>
+                                    <span class="badge bg-success text-white px-2.5 py-1 rounded-pill fw-semibold" style="background-color: #15803d !important; color: #ffffff !important;"><?php echo htmlspecialchars($b['status']); ?></span>
                                 </div>
                                 <div class="p-2 rounded-circle bg-primary bg-opacity-10 text-primary">
                                     <i class="fa-solid fa-building fa-lg"></i>

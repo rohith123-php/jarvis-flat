@@ -351,7 +351,7 @@ table, .amount, .badge, .number, code, .fs-1, .fs-2, .fs-3, .fs-4, .fs-5 {
     color: var(--blue-brand);
 }
 
-/* Badges */
+/* Badges & Status Pills - High Contrast & Guaranteed Visibility */
 .badge-status {
     padding: 0.45em 0.9em;
     font-weight: 700;
@@ -362,15 +362,66 @@ table, .amount, .badge, .number, code, .fs-1, .fs-2, .fs-3, .fs-4, .fs-5 {
     display: inline-block;
     color: #ffffff !important;
 }
-.badge-vacant {
+.badge-vacant, .badge-available {
     background-color: #16a34a !important;
     color: #ffffff !important;
     border: 1px solid rgba(22, 163, 74, 0.4) !important;
 }
-.badge-occupied {
+.badge-occupied, .badge-booked {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(30, 41, 59, 0.4) !important;
+}
+.badge-paid, .badge-resolved {
+    background-color: #15803d !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(21, 128, 61, 0.4) !important;
+}
+.badge-pending, .badge-unpaid {
+    background-color: #f59e0b !important;
+    color: #0f172a !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+}
+.badge-failed, .badge-cancelled {
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(220, 38, 38, 0.4) !important;
+}
+.badge-refunded {
     background-color: #475569 !important;
     color: #ffffff !important;
     border: 1px solid rgba(71, 85, 105, 0.4) !important;
+}
+
+/* Status Pill Contrast Overrides */
+.badge.bg-success {
+    background-color: #15803d !important;
+    color: #ffffff !important;
+}
+.badge.bg-success.text-success, .badge.text-success.border-success {
+    background-color: #dcfce7 !important;
+    color: #15803d !important;
+    border-color: #86efac !important;
+}
+.badge.bg-secondary.text-secondary {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border-color: #cbd5e1 !important;
+}
+.badge.bg-danger.text-danger {
+    background-color: #fee2e2 !important;
+    color: #b91c1c !important;
+    border-color: #fca5a5 !important;
+}
+.badge.bg-primary.text-primary {
+    background-color: #e0e7ff !important;
+    color: #1e40af !important;
+    border-color: #a5b4fc !important;
+}
+.badge.bg-warning.text-warning {
+    background-color: #fef3c7 !important;
+    color: #b45309 !important;
+    border-color: #fde68a !important;
 }
 
 /* Sidebar Navigation */

@@ -188,13 +188,13 @@ require_once 'includes/header.php';
                                         <td class="small text-muted"><?php echo date('M d, Y H:i', strtotime($p['payment_date'])); ?></td>
                                         <td>
                                             <?php if ($p['payment_status'] === 'Paid'): ?>
-                                                <span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-20 px-2.5 py-1.5 rounded-pill"><i class="fa-solid fa-circle-check me-1"></i> Paid</span>
+                                                <span class="badge bg-success text-white px-3 py-1.5 rounded-pill fw-bold" style="background-color: #15803d !important; color: #ffffff !important; font-size: 0.75rem;"><i class="fa-solid fa-circle-check me-1"></i> Paid</span>
                                             <?php elseif ($p['payment_status'] === 'Pending'): ?>
-                                                <span class="badge bg-warning bg-opacity-15 text-dark border border-warning border-opacity-30 px-2.5 py-1.5 rounded-pill"><i class="fa-solid fa-clock me-1"></i> Pending</span>
+                                                <span class="badge bg-warning text-dark px-3 py-1.5 rounded-pill fw-bold" style="background-color: #f59e0b !important; color: #0f172a !important; font-size: 0.75rem;"><i class="fa-solid fa-clock me-1"></i> Pending</span>
                                             <?php elseif ($p['payment_status'] === 'Failed'): ?>
-                                                <span class="badge bg-danger bg-opacity-15 text-danger border border-danger border-opacity-20 px-2.5 py-1.5 rounded-pill"><i class="fa-solid fa-circle-xmark me-1"></i> Failed</span>
+                                                <span class="badge bg-danger text-white px-3 py-1.5 rounded-pill fw-bold" style="background-color: #dc2626 !important; color: #ffffff !important; font-size: 0.75rem;"><i class="fa-solid fa-circle-xmark me-1"></i> Failed</span>
                                             <?php else: ?>
-                                                <span class="badge bg-secondary bg-opacity-15 text-secondary border border-secondary border-opacity-20 px-2.5 py-1.5 rounded-pill"><i class="fa-solid fa-rotate-left me-1"></i> Refunded</span>
+                                                <span class="badge bg-secondary text-white px-3 py-1.5 rounded-pill fw-bold" style="background-color: #475569 !important; color: #ffffff !important; font-size: 0.75rem;"><i class="fa-solid fa-rotate-left me-1"></i> Refunded</span>
                                             <?php endif; ?>
                                         </td>
                                         <td class="text-end">

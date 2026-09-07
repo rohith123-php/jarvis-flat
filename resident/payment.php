@@ -109,8 +109,8 @@ try {
                                         <td class="fw-bold">₹<?php echo number_format($record['amount'], 2); ?></td>
                                         <td><?php echo $record['payment_date'] ? date('M d, Y', strtotime($record['payment_date'])) : 'N/A'; ?></td>
                                         <td>
-                                            <span class="badge badge-status <?php echo $record['status'] === 'Paid' ? 'badge-occupied' : 'badge-pending'; ?>">
-                                                <?php echo htmlspecialchars($record['status']); ?>
+                                            <span class="badge <?php echo $record['status'] === 'Paid' ? 'badge-paid' : 'badge-pending'; ?> px-3 py-1.5 rounded-pill fw-bold" style="<?php echo $record['status'] === 'Paid' ? 'background-color: #15803d !important; color: #ffffff !important;' : 'background-color: #f59e0b !important; color: #0f172a !important;'; ?> font-size: 0.75rem;">
+                                                <i class="fa-solid <?php echo $record['status'] === 'Paid' ? 'fa-circle-check' : 'fa-clock'; ?> me-1"></i> <?php echo htmlspecialchars($record['status']); ?>
                                             </span>
                                         </td>
                                         <td class="text-end">

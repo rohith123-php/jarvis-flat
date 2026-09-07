@@ -100,7 +100,7 @@ require_once 'includes/header.php';
                                         </span>
                                     </td>
                                     <td class="small text-muted">Full Access (Inventory, Financials, Users, Audit)</td>
-                                    <td><span class="badge bg-success bg-opacity-15 text-success border border-success border-opacity-20 px-2.5 py-1.5 rounded-pill"><i class="fa-solid fa-check me-1"></i> Active</span></td>
+                                    <td><span class="badge bg-success text-white px-3 py-1.5 rounded-pill fw-bold" style="background-color: #15803d !important; color: #ffffff !important; font-size: 0.75rem;"><i class="fa-solid fa-check me-1"></i> Active</span></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
