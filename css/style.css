@@ -1,0 +1,1037 @@
+/* Import Modern Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f6f9;
+    --text-main: #2c3e50;
+    --text-muted: #7f8c8d;
+    
+    /* Casagrand Brand Color Palette */
+    --blue-brand: #103178;
+    --orange-brand: #f2a122;
+    --orange-hover: #d98a1a;
+    
+    --border-color: rgba(16, 49, 120, 0.1);
+    --success-color: #27ae60;
+    --danger-color: #c0392b;
+    --card-shadow: 0 10px 30px rgba(16, 49, 120, 0.06);
+    --navbar-bg: #ffffff;
+    --sidebar-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue-brand);
+}
+
+/* Typography styles override */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--blue-brand);
+    letter-spacing: 0.2px;
+}
+
+.font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Normal Clean Font for all numeric elements, stat cards, tables & amounts */
+.stat-card h2, .stat-card h3, .stat-card h4, .stat-card h5,
+table, .amount, .badge, .number, code, .fs-1, .fs-2, .fs-3, .fs-4, .fs-5 {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+    font-variant-numeric: normal;
+}
+
+/* Navbar Styling */
+.navbar-custom {
+    background-color: var(--navbar-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+}
+.navbar-custom .navbar-brand {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--blue-brand);
+    letter-spacing: 1px;
+}
+.navbar-custom .navbar-brand span {
+    color: var(--orange-brand);
+}
+.navbar-custom .nav-link {
+    color: #4a5568;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: none;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.navbar-custom .nav-link:hover, 
+.navbar-custom .nav-link.active {
+    color: var(--orange-brand);
+}
+
+/* Call Us Dropdown button */
+.btn-call-dropdown {
+    background-color: var(--orange-brand);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s;
+}
+.btn-call-dropdown:hover {
+    background-color: var(--orange-hover);
+    color: #ffffff;
+}
+
+/* Hero Showcase Banner */
+.casagrand-hero {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.35)), url('../images/living.png');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 21/9;
+    min-height: 55vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-bottom: 4px solid var(--orange-brand);
+}
+@media (max-width: 768px) {
+    .casagrand-hero {
+        min-height: 35vh;
+    }
+}
+.hero-title-overlay {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+/* Right Sticky Sidebar Contact Bar */
+.sticky-contact-sidebar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--orange-brand);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-shadow: -2px 0 15px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+.sticky-contact-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: background-color 0.2s;
+}
+.sticky-contact-icon:last-child {
+    border-bottom: none;
+}
+.sticky-contact-icon:hover {
+    background-color: var(--blue-brand);
+    color: #ffffff;
+}
+
+/* Floating Chat Button */
+.floating-chat-bubble {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 2rem;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fcd34d 0%, var(--orange-brand) 45%, var(--blue-brand) 95%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(242, 161, 34, 0.45);
+    z-index: 1000;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 2px solid #ffffff;
+    animation: floatingGlow 2.5s infinite;
+}
+@keyframes floatingGlow {
+    0% { box-shadow: 0 10px 30px rgba(242, 161, 34, 0.45); }
+    50% { box-shadow: 0 10px 35px rgba(242, 161, 34, 0.7), 0 0 0 8px rgba(242, 161, 34, 0.15); }
+    100% { box-shadow: 0 10px 30px rgba(242, 161, 34, 0.45); }
+}
+.floating-chat-bubble:hover {
+    transform: scale(1.1) rotate(5deg);
+    background: radial-gradient(circle, #fcd34d 0%, var(--orange-brand) 30%, var(--blue-brand) 90%);
+}
+.floating-chat-bubble span {
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+}
+
+/* Location Summary Filtering Bar */
+.location-summary-row {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #dee2e6;
+    margin-top: -2.5rem;
+    position: relative;
+    z-index: 10;
+    box-shadow: var(--card-shadow);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.location-tab {
+    flex: 1;
+    min-width: 130px;
+    padding: 1.25rem 1rem;
+    text-align: left;
+    text-decoration: none;
+    background-color: #dee2e6;
+    color: #333333;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    border-right: none;
+}
+.location-tab.active {
+    background-color: var(--orange-brand) !important;
+    color: #000000 !important;
+}
+.location-tab:hover:not(.active) {
+    background-color: #ced4da;
+}
+.tab-label {
+    font-weight: 800;
+    font-size: 1.05rem;
+    display: block;
+    color: #103178;
+}
+.location-tab.active .tab-label {
+    color: #000000 !important;
+}
+.tab-subtext {
+    font-size: 0.75rem;
+    color: #666666;
+    display: block;
+    line-height: 1.35;
+}
+.location-tab.active .tab-subtext {
+    color: #1a252f !important;
+    font-weight: 600;
+}
+
+/* Premium Apartment Cards */
+.card-premium {
+    background-color: #ffffff;
+    border: 1px solid rgba(16, 49, 120, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(16, 49, 120, 0.04);
+}
+.card-premium:hover {
+    transform: translateY(-8px);
+    border-color: var(--orange-brand) !important;
+    box-shadow: 0 15px 35px rgba(242, 161, 34, 0.15);
+}
+.card-image-wrapper {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-premium:hover .card-image-wrapper img {
+    transform: scale(1.08);
+}
+.card-premium .card-body {
+    padding: 1.5rem;
+}
+.card-premium .price-tag {
+    color: var(--blue-brand);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+.card-premium .bhk-badge {
+    background-color: rgba(242, 161, 34, 0.08) !important;
+    border: 1px solid rgba(242, 161, 34, 0.3) !important;
+    color: var(--orange-brand) !important;
+    padding: 0.45em 0.9em;
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+.card-premium .btn-primary-custom {
+    background: linear-gradient(135deg, #ffd700 0%, #f39c12 100%) !important;
+    border: none !important;
+    color: #103178 !important;
+    font-weight: 700 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 10px rgba(242, 161, 34, 0.2) !important;
+}
+.card-premium .btn-primary-custom:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(242, 161, 34, 0.35) !important;
+    background: linear-gradient(135deg, #ffe066 0%, #e67e22 100%) !important;
+}
+.card-premium .btn-outline-primary-custom {
+    border: 1.5px solid var(--blue-brand) !important;
+    color: var(--blue-brand) !important;
+    font-weight: 700 !important;
+    transition: all 0.3s ease !important;
+}
+.card-premium .btn-outline-primary-custom:hover {
+    background-color: var(--blue-brand) !important;
+    color: #ffffff !important;
+}
+.compare-checkbox-label {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+.card-premium:hover .compare-checkbox-label {
+    color: var(--blue-brand);
+}
+
+/* Badges */
+.badge-status {
+    padding: 0.45em 0.9em;
+    font-weight: 700;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: inline-block;
+    color: #ffffff !important;
+}
+.badge-vacant {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(22, 163, 74, 0.4) !important;
+}
+.badge-occupied {
+    background-color: #475569 !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(71, 85, 105, 0.4) !important;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    min-height: 100vh;
+    padding: 2.5rem 1rem;
+    border-right: 1px solid var(--border-color);
+}
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+.sidebar-link i {
+    margin-right: 14px;
+    font-size: 1.1rem;
+    color: var(--blue-brand);
+}
+.sidebar-link:hover, .sidebar-link.active {
+    color: var(--orange-brand);
+    background: rgba(242, 161, 34, 0.05);
+    border-left-color: var(--orange-brand);
+    text-decoration: none;
+}
+
+/* Footer Section */
+.footer-custom {
+    background-color: var(--blue-brand);
+    color: #cbd5e1;
+    padding: 4rem 0;
+    font-size: 0.85rem;
+    border-top: 4px solid var(--orange-brand);
+}
+.footer-custom a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.footer-custom a:hover {
+    color: var(--orange-brand);
+}
+.footer-custom h5 {
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+}
+.hover-gold:hover {
+    color: var(--orange-brand) !important;
+}
+/* Custom Table */
+.table-premium tr {
+    background-color: #ffffff !important;
+}
+.table-premium td, .table-premium th {
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+.table-premium th {
+    background-color: var(--sidebar-bg) !important;
+    font-weight: 700;
+    color: var(--blue-brand) !important;
+}
+
+/* Form inputs general styling */
+.form-control-custom {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-main) !important;
+}
+.form-control-custom:focus {
+    border-color: var(--orange-brand);
+    box-shadow: none;
+}
+
+/* Modal theme styling */
+.modal-content {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px !important;
+}
+.modal-header {
+    background-color: var(--sidebar-bg) !important;
+    border-bottom: 1px solid var(--border-color);
+}
+.modal-header .btn-close {
+    filter: none !important;
+}
+.modal-header h5 {
+    color: var(--blue-brand);
+}
+
+/* Shopping Cart/Inquiry Badge */
+.cart-badge {
+    background-color: var(--orange-brand);
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 0.25em 0.5em;
+    border-radius: 50%;
+    position: relative;
+    top: -8px;
+    margin-left: 2px;
+}
+
+/* Live Chat Simulator Styles & Glowing Concierge Orb */
+.chat-box-container {
+    position: fixed;
+    right: 2rem;
+    bottom: 5.5rem;
+    width: 350px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 15px 45px rgba(16, 49, 120, 0.16);
+    z-index: 1050;
+    display: none;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border-top: 3px solid var(--orange-brand);
+}
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+.chat-header {
+    background: linear-gradient(135deg, var(--blue-brand) 0%, #152c5c 100%);
+    color: #ffffff;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Glowing Jarvis Concierge Avatar Core */
+.glowing-jarvis-core {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    background: radial-gradient(circle, #fcd34d 0%, var(--orange-brand) 40%, var(--blue-brand) 95%);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px rgba(242, 161, 34, 0.55);
+    border: 2px solid #ffffff;
+    vertical-align: middle;
+}
+.jarvis-core-pulse {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid var(--orange-brand);
+    border-radius: 50%;
+    animation: pulseCore 2s infinite ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+@keyframes pulseCore {
+    0% { transform: scale(0.9); opacity: 0.8; }
+    50% { opacity: 0.4; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+.chat-body {
+    height: 260px;
+    overflow-y: auto;
+    padding: 1.25rem;
+    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+.chat-msg-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+.chat-msg-row.user-row {
+    justify-content: flex-end;
+}
+.bot-avatar-mini {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fcd34d 0%, var(--orange-brand) 50%, var(--blue-brand) 95%);
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 6px rgba(242, 161, 34, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+.chat-msg {
+    max-width: 75%;
+    padding: 0.6rem 0.9rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+.chat-msg.bot {
+    background-color: #ffffff;
+    color: var(--text-main);
+    border-bottom-left-radius: 2px;
+    border: 1px solid rgba(16, 49, 120, 0.05);
+}
+.chat-msg.user {
+    background-color: var(--blue-brand);
+    color: #ffffff;
+    border-bottom-right-radius: 2px;
+}
+.chat-input-area {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    padding: 0.75rem;
+    background-color: #ffffff;
+    gap: 0.5rem;
+}
+.chat-input-area input {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 6px;
+    outline: none;
+    background-color: #f8f9fa;
+    transition: all 0.2s;
+}
+.chat-input-area input:focus {
+    border-color: var(--orange-brand);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(242, 161, 34, 0.1);
+}
+.chat-input-area button {
+    background-color: var(--orange-brand);
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.chat-input-area button:hover {
+    background-color: var(--orange-hover);
+}
+
+/* Admin Dashboard Clickable Card Shortcuts */
+.card-shortcut:hover .stat-card {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(16, 49, 120, 0.12) !important;
+    border-color: var(--orange-brand) !important;
+}
+
+/* Sticky top header utility */
+.navbar-custom {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+/* Dark theme variables removed to prioritize a clean light theme layout matching Casagrand brand guidelines */
+
+/* Wishlist Heart Active state */
+.wishlist-heart-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888888;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 5;
+    transition: all 0.2s;
+}
+.wishlist-heart-btn:hover {
+    transform: scale(1.1);
+}
+.wishlist-heart-btn.active {
+    color: #e74c3c;
+}
+
+/* Comparison Drawer styles */
+.comparison-drawer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--blue-brand);
+    color: white;
+    padding: 1.25rem 2rem;
+    z-index: 1100;
+    display: none;
+    box-shadow: 0 -5px 25px rgba(0,0,0,0.25);
+    border-top: 4px solid var(--orange-brand);
+}
+.compare-checkbox-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Back to Top button styling */
+.back-to-top-btn {
+    position: fixed;
+    left: 1.5rem;
+    bottom: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--blue-brand);
+    color: #ffffff;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(16, 49, 120, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.back-to-top-btn:hover {
+    background-color: var(--orange-brand);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(242, 161, 34, 0.4);
+}
+
+/* Calculators Layout styling */
+.calc-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+}
+.calc-result-box {
+    background-color: rgba(242, 161, 34, 0.08);
+    border: 1px solid var(--orange-brand);
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.calc-result-box h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* Testimonial slider layouts */
+.testimonial-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    margin: 1rem 0;
+}
+.testimonial-stars {
+    color: var(--orange-brand);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.testimonial-user img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Grander Logo Emblem transitions */
+.navbar-brand:hover .logo-emblem {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 4px 15px rgba(242, 161, 34, 0.35) !important;
+}
+/* Slow down Bootstrap Carousel slide transitions */
+#heroCarousel .carousel-item {
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    height: 520px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ken Burns smooth sliding and zooming effect */
+.carousel-zoom-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transform: scale(1) translate(0, 0);
+    transition: transform 2.5s ease-out;
+}
+
+.carousel-item.active .carousel-zoom-img {
+    animation: kenBurnsAnimation 8s ease-out forwards;
+}
+
+.carousel-overlay-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.55));
+    z-index: 2;
+}
+
+.carousel-caption {
+    z-index: 3 !important;
+}
+
+@keyframes kenBurnsAnimation {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    100% {
+        transform: scale(1.08) translate(1px, -2px);
+    }
+}
+
+.max-width-600 {
+    max-width: 600px !important;
+}
+
+/* Voice Search Modal Custom Animation Styles */
+.voice-pulse-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.voice-pulse-ring {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--orange-brand);
+    border-radius: 50%;
+    opacity: 0;
+    animation: voicePulse 1.8s infinite ease-out;
+    pointer-events: none;
+}
+.voice-pulse-ring.ring-2 {
+    animation-delay: 0.6s;
+}
+.voice-mic-icon {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(242, 161, 34, 0.4);
+    transition: transform 0.3s;
+}
+@keyframes voicePulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+.animate-bounce-slow {
+    animation: bounceSlow 2s infinite;
+}
+@keyframes bounceSlow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+.min-height-80 {
+    min-height: 80px;
+}
+.min-height-80 p {
+    line-height: 1.4;
+}
+
+/* Grand Contact Form Submit Button */
+.btn-grand-submit {
+    border: none !important;
+    background: linear-gradient(135deg, #ffd700 0%, #f39c12 100%) !important;
+    color: #111111 !important;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+}
+
+/* Grand Gallery Hover Effects */
+.shadow-hover {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.shadow-hover:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-3px);
+}
+.shadow-hover img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+.shadow-hover:hover img {
+    transform: scale(1.08) !important;
+}
+
+.gallery-card-grand {
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.gallery-card-grand:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45) !important;
+    border-color: rgba(242, 161, 34, 0.5) !important;
+}
+.gallery-card-grand:hover .gallery-zoom-img {
+    transform: scale(1.09) !important;
+}
+
+/* Professional Standard Admin Layout & Theme System */
+:root {
+    --admin-primary: #123B7A;
+    --admin-accent: #F59E0B;
+    --admin-bg: #F5F7FA;
+    --admin-card-bg: #FFFFFF;
+    --admin-text: #1F2937;
+    --admin-success: #16A34A;
+    --admin-danger: #DC2626;
+}
+
+body.admin-theme {
+    background-color: var(--admin-bg) !important;
+    color: var(--admin-text) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.sidebar-item {
+    display: block;
+    padding: 0.6rem 0.9rem;
+    color: #4B5563;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 0.885rem !important;
+    font-weight: 500 !important;
+    line-height: 1.45;
+    letter-spacing: -0.01em !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.15s ease-in-out;
+}
+.sidebar-item .nav-icon {
+    width: 24px;
+    font-size: 0.95rem;
+    color: #6B7280;
+    margin-right: 0.5rem;
+    transition: color 0.2s ease;
+}
+.sidebar-item:hover {
+    color: #123B7A;
+    background-color: #F3F4F6;
+}
+.sidebar-item:hover .nav-icon {
+    color: #123B7A;
+}
+.sidebar-item.active {
+    color: #123B7A;
+    background-color: #EEF2FF;
+    font-weight: 600 !important;
+}
+.sidebar-item.active .nav-icon {
+    color: #123B7A;
+}
+
+/* Backward compatibility for sidebar-link if used elsewhere */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0.65rem 0.9rem;
+    color: #4B5563;
+    font-size: 0.925rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+.sidebar-link:hover {
+    color: #123B7A;
+    background-color: #F3F4F6;
+}
+.sidebar-link.active {
+    color: #123B7A;
+    background-color: #EEF2FF;
+    font-weight: 700;
+}
+
+/* Stat Cards */
+.stat-card-compact {
+    background: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.fs-7 { font-size: 0.75rem !important; }
+.fs-8 { font-size: 0.65rem !important; }
+
+
+
+
+
