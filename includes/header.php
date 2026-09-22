@@ -14,6 +14,7 @@ $contact_phone = get_setting('contact_phone', '+91 80562 10606');
 $primary_color = get_setting('primary_color', '#103178');
 $accent_color  = get_setting('accent_color', '#f2a122');
 $dark_heading_color = get_setting('dark_heading_color', '#0f172a');
+$header_bg_color = get_setting('header_bg_color', '#ffffff');
 $heading_font  = get_setting('heading_font', "'Playfair Display', serif");
 $body_font     = get_setting('body_font', "'Plus Jakarta Sans', sans-serif");
 
@@ -42,6 +43,7 @@ if (!isset($active_type)) {
             --blue-brand: <?php echo htmlspecialchars($primary_color); ?> !important;
             --orange-brand: <?php echo htmlspecialchars($accent_color); ?> !important;
             --orange-hover: <?php echo htmlspecialchars($accent_color); ?>ee !important;
+            --header-bg: <?php echo htmlspecialchars($header_bg_color); ?> !important;
             --font-heading: <?php echo $heading_font; ?> !important;
             --font-body: <?php echo $body_font; ?> !important;
         }
@@ -50,6 +52,9 @@ if (!isset($active_type)) {
         }
         h1, h2, h3, h4, h5, h6, .font-heading, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6, .navbar-brand {
             font-family: var(--font-heading) !important;
+        }
+        .navbar-custom {
+            background-color: var(--header-bg) !important;
         }
     </style>
 </head>

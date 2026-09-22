@@ -129,6 +129,7 @@ CREATE TABLE IF NOT EXISTS `complaints` (
   `description` TEXT NOT NULL,
   `category` VARCHAR(50) DEFAULT 'General',
   `status` ENUM('Pending', 'In Progress', 'Resolved', 'Closed') NOT NULL DEFAULT 'Pending',
+  `admin_response` TEXT DEFAULT NULL,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (`resident_id`) REFERENCES `residents` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

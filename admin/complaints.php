@@ -11,13 +11,14 @@ if (!isset($_SESSION['admin_logged_in'])) {
 $message = '';
 $error = '';
 
-// Handle Resolve Complaint
-if (isset($_GET['resolve'])) {
-    $id = intval($_GET['resolve']);
+// Handle Resolve Complaint with Response
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['resolve_complaint'])) {
+    $id = intval($_POST['complaint_id']);
+    $response = trim($_POST['admin_response']);
     try {
-        $stmt = $pdo->prepare("UPDATE complaints SET status = 'Resolved' WHERE id = :id");
-        $stmt->execute(['id' => $id]);
-        $message = 'Complaint marked as Resolved!';
+        $stmt = $pdo->prepare("UPDATE complaints SET status = 'Resolved', admin_response = :resp WHERE id = :id");
+        $stmt->execute(['resp' => $response, 'id' => $id]);
+        $message = 'Complaint marked as Resolved with response!';
     } catch (PDOException $e) {
         $error = 'Error resolving complaint: ' . $e->getMessage();
     }
@@ -99,8 +100,14 @@ try {
                                     <p class="text-muted small mb-3" style="min-height: 50px;">
                                         <?php echo htmlspecialchars($comp['description']); ?>
                                     </p>
+                                    <?php if (!empty($comp['admin_response'])): ?>
+                                        <div class="mt-3 p-3 bg-light rounded border-start border-success border-4">
+                                            <div class="small fw-bold text-success mb-1"><i class="fa-solid fa-reply"></i> Admin Response:</div>
+                                            <div class="small text-muted"><?php echo nl2br(htmlspecialchars($comp['admin_response'])); ?></div>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
-                                <div class="border-top pt-3">
+                                <div class="border-top pt-3 mt-3">
                                     <div class="d-flex align-items-center mb-3">
                                         <div class="bg-light p-2 rounded-circle me-2">
                                             <i class="fa-solid fa-user text-muted small"></i>
@@ -113,10 +120,10 @@ try {
                                         </div>
                                     </div>
                                     <div class="d-flex gap-2">
-                                        <?php if ($comp['status'] === 'Pending'): ?>
-                                            <a href="complaints.php?resolve=<?php echo $comp['id']; ?>" class="btn btn-sm btn-success flex-grow-1">
-                                                <i class="fa-solid fa-circle-check me-1"></i> Resolve
-                                            </a>
+                                        <?php if ($comp['status'] !== 'Resolved'): ?>
+                                            <button type="button" class="btn btn-sm btn-success flex-grow-1" data-bs-toggle="modal" data-bs-target="#resolveModal<?php echo $comp['id']; ?>">
+                                                <i class="fa-solid fa-check me-1"></i> Resolve
+                                            </button>
                                         <?php endif; ?>
                                         <a href="complaints.php?delete=<?php echo $comp['id']; ?>" 
                                            class="btn btn-sm btn-outline-danger <?php echo $comp['status'] === 'Resolved' ? 'w-100' : ''; ?>"
@@ -124,6 +131,31 @@ try {
                                             <i class="fa-solid fa-trash"></i> Delete
                                         </a>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resolve Modal -->
+                        <div class="modal fade" id="resolveModal<?php echo $comp['id']; ?>" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form action="complaints.php" method="POST">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Resolve Complaint #<?php echo $comp['id']; ?></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input type="hidden" name="complaint_id" value="<?php echo $comp['id']; ?>">
+                                            <div class="mb-3">
+                                                <label class="form-label">Admin Response / Resolution Details</label>
+                                                <textarea class="form-control" name="admin_response" rows="4" required placeholder="Describe how the issue was solved..."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="submit" name="resolve_complaint" class="btn btn-success">Mark as Resolved</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

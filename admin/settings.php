@@ -61,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         'primary_color'           => trim($_POST['primary_color'] ?? '#103178'),
         'accent_color'            => trim($_POST['accent_color'] ?? '#f2a122'),
         'dark_heading_color'      => trim($_POST['dark_heading_color'] ?? '#0f172a'),
+        'header_bg_color'         => trim($_POST['header_bg_color'] ?? '#ffffff'),
         'heading_font'            => trim($_POST['heading_font'] ?? "'Playfair Display', serif"),
         'body_font'               => trim($_POST['body_font'] ?? "'Plus Jakarta Sans', sans-serif"),
 
@@ -149,6 +150,7 @@ $currency_code           = get_setting('currency_code', 'INR');
 $primary_color           = get_setting('primary_color', '#103178');
 $accent_color            = get_setting('accent_color', '#f2a122');
 $dark_heading_color      = get_setting('dark_heading_color', '#0f172a');
+$header_bg_color         = get_setting('header_bg_color', '#ffffff');
 $heading_font            = get_setting('heading_font', "'Playfair Display', serif");
 $body_font               = get_setting('body_font', "'Plus Jakarta Sans', sans-serif");
 
@@ -269,25 +271,32 @@ require_once 'includes/header.php';
                             
                             <!-- Colors Row -->
                             <div class="row g-3 mb-3">
-                                <div class="col-4">
-                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.75rem;">Primary Color</label>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="primary_picker" value="<?php echo htmlspecialchars($primary_color); ?>" oninput="document.getElementById('primary_color').value = this.value;" style="width:38px; height:38px; cursor:pointer;">
+                                <div class="col-3">
+                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.7rem;">Primary</label>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="primary_picker" value="<?php echo htmlspecialchars($primary_color); ?>" oninput="document.getElementById('primary_color').value = this.value;" style="width:34px; height:34px; cursor:pointer;">
                                         <input type="text" class="form-control form-control-sm font-monospace" id="primary_color" name="primary_color" value="<?php echo htmlspecialchars($primary_color); ?>" oninput="document.getElementById('primary_picker').value = this.value;" required>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.75rem;">Accent / Gold</label>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="accent_picker" value="<?php echo htmlspecialchars($accent_color); ?>" oninput="document.getElementById('accent_color').value = this.value;" style="width:38px; height:38px; cursor:pointer;">
+                                <div class="col-3">
+                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.7rem;">Accent</label>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="accent_picker" value="<?php echo htmlspecialchars($accent_color); ?>" oninput="document.getElementById('accent_color').value = this.value;" style="width:34px; height:34px; cursor:pointer;">
                                         <input type="text" class="form-control form-control-sm font-monospace" id="accent_color" name="accent_color" value="<?php echo htmlspecialchars($accent_color); ?>" oninput="document.getElementById('accent_picker').value = this.value;" required>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.75rem;">Heading Dark</label>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="dark_picker" value="<?php echo htmlspecialchars($dark_heading_color); ?>" oninput="document.getElementById('dark_heading_color').value = this.value;" style="width:38px; height:38px; cursor:pointer;">
+                                <div class="col-3">
+                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.7rem;">Heading</label>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="dark_picker" value="<?php echo htmlspecialchars($dark_heading_color); ?>" oninput="document.getElementById('dark_heading_color').value = this.value;" style="width:34px; height:34px; cursor:pointer;">
                                         <input type="text" class="form-control form-control-sm font-monospace" id="dark_heading_color" name="dark_heading_color" value="<?php echo htmlspecialchars($dark_heading_color); ?>" oninput="document.getElementById('dark_picker').value = this.value;" required>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.7rem;">Header BG</label>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="header_bg_picker" value="<?php echo htmlspecialchars($header_bg_color); ?>" oninput="document.getElementById('header_bg_color').value = this.value;" style="width:34px; height:34px; cursor:pointer;">
+                                        <input type="text" class="form-control form-control-sm font-monospace" id="header_bg_color" name="header_bg_color" value="<?php echo htmlspecialchars($header_bg_color); ?>" oninput="document.getElementById('header_bg_picker').value = this.value;" required>
                                     </div>
                                 </div>
                             </div>

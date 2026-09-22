@@ -119,7 +119,13 @@ try {
                                                 <i class="fa-solid <?php echo $comp['status'] === 'Resolved' ? 'fa-circle-check' : 'fa-clock'; ?> me-1"></i> <?php echo htmlspecialchars($comp['status']); ?>
                                             </span>
                                         </div>
-                                        <p class="text-muted mb-0 small"><?php echo nl2br(htmlspecialchars($comp['description'])); ?></p>
+                                        <p class="text-muted mb-2 small"><?php echo nl2br(htmlspecialchars($comp['description'])); ?></p>
+                                        <?php if (!empty($comp['admin_response'])): ?>
+                                            <div class="p-2 bg-light rounded border-start border-success border-3 mt-2">
+                                                <div class="small fw-bold text-success mb-1"><i class="fa-solid fa-reply"></i> Admin Reply:</div>
+                                                <div class="small text-muted"><?php echo nl2br(htmlspecialchars($comp['admin_response'])); ?></div>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                 <?php endforeach; ?>
                             <?php else: ?>
