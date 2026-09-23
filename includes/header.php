@@ -15,6 +15,9 @@ $primary_color = get_setting('primary_color', '#103178');
 $accent_color  = get_setting('accent_color', '#f2a122');
 $dark_heading_color = get_setting('dark_heading_color', '#0f172a');
 $header_bg_color = get_setting('header_bg_color', '#ffffff');
+$logo_primary_color = get_setting('logo_primary_color', '#103178');
+$logo_accent_color  = get_setting('logo_accent_color', '#f39c12');
+$site_bg_color      = get_setting('site_bg_color', '#f8f9fa');
 $heading_font  = get_setting('heading_font', "'Playfair Display', serif");
 $body_font     = get_setting('body_font', "'Plus Jakarta Sans', sans-serif");
 
@@ -44,11 +47,15 @@ if (!isset($active_type)) {
             --orange-brand: <?php echo htmlspecialchars($accent_color); ?> !important;
             --orange-hover: <?php echo htmlspecialchars($accent_color); ?>ee !important;
             --header-bg: <?php echo htmlspecialchars($header_bg_color); ?> !important;
+            --logo-primary: <?php echo htmlspecialchars($logo_primary_color); ?> !important;
+            --logo-accent: <?php echo htmlspecialchars($logo_accent_color); ?> !important;
+            --site-bg: <?php echo htmlspecialchars($site_bg_color); ?> !important;
             --font-heading: <?php echo $heading_font; ?> !important;
             --font-body: <?php echo $body_font; ?> !important;
         }
         body {
             font-family: var(--font-body) !important;
+            background-color: var(--site-bg) !important;
         }
         h1, h2, h3, h4, h5, h6, .font-heading, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6, .navbar-brand {
             font-family: var(--font-heading) !important;
@@ -66,19 +73,19 @@ if (!isset($active_type)) {
             <!-- Brand Logo: Royal Shield & Crown Crest -->
             <a class="navbar-brand d-flex align-items-center" href="<?php echo $base_path; ?>index.php" style="text-decoration: none;">
                 <!-- Royal Shield & Crown Crest Emblem -->
-                <div class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px; background: linear-gradient(135deg, #103178 0%, #1c4b9c 100%); border-radius: 14px; border: 2px solid #F59E0B; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35); position: relative; transition: all 0.3s ease; cursor: pointer;">
-                    <i class="fa-solid fa-shield-halved" style="font-size: 1.6rem; color: #F59E0B; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
+                <div class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px; background: var(--logo-primary); border-radius: 14px; border: 2px solid var(--logo-accent); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); position: relative; transition: all 0.3s ease; cursor: pointer;">
+                    <i class="fa-solid fa-shield-halved" style="font-size: 1.6rem; color: var(--logo-accent); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
                     <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.85rem; color: #ffffff; top: 14px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));"></i>
-                    <span style="position: absolute; top: -4px; right: -4px; width: 14px; height: 14px; background: linear-gradient(135deg, #ffd700 0%, #f59e0b 100%); border: 1.5px solid #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(245, 158, 11, 0.8); display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-diamond" style="font-size: 7px; color: #103178;"></i>
+                    <span style="position: absolute; top: -4px; right: -4px; width: 14px; height: 14px; background: var(--logo-accent); border: 1.5px solid #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-diamond" style="font-size: 7px; color: var(--logo-primary);"></i>
                     </span>
                 </div>
                 <div class="lh-1">
-                    <div style="font-family: 'Playfair Display', 'Plus Jakarta Sans', serif; font-weight: 900; font-size: 2.2rem; background: linear-gradient(135deg, #ffd700 0%, #f39c12 50%, #ffd700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1.5px; display: flex; align-items: center; text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.05); filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.15));">
+                    <div style="font-family: 'Playfair Display', 'Plus Jakarta Sans', serif; font-weight: 900; font-size: 2.2rem; color: var(--logo-accent); letter-spacing: 1.5px; display: flex; align-items: center; text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.05); filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.15));">
                         <?php echo htmlspecialchars(strtoupper($system_name)); ?>
-                        <span style="color: var(--orange-brand); -webkit-text-fill-color: var(--orange-brand); font-weight: 300; font-size: 1.6rem; margin-left: 3px; margin-top: -6px;">✦</span>
+                        <span style="color: var(--logo-accent); -webkit-text-fill-color: var(--logo-accent); font-weight: 300; font-size: 1.6rem; margin-left: 3px; margin-top: -6px;">✦</span>
                     </div>
-                    <span style="display:block; font-size:0.58rem; letter-spacing:4.5px; color:var(--orange-brand); font-weight:700; text-transform:uppercase; margin-top:3px;"><?php echo htmlspecialchars($brand_tagline); ?></span>
+                    <span style="display:block; font-size:0.58rem; letter-spacing:4.5px; color:var(--logo-accent); font-weight:700; text-transform:uppercase; margin-top:3px;"><?php echo htmlspecialchars($brand_tagline); ?></span>
                 </div>
             </a>
 
