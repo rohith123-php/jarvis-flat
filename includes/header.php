@@ -98,13 +98,7 @@ if (!isset($active_type)) {
         #pricing,
         #contact,
         #amenities,
-        #apartments-showcase,
-        .bg-white:not(input):not(textarea):not(select),
-        .card,
-        .card-premium,
-        .p-4.border.rounded-3,
-        .shadow-hover {
-            background: var(--site-bg) !important;
+        #apartments-showcase {
             background-color: var(--site-bg) !important;
         }
     </style>
