@@ -108,11 +108,18 @@ if (!isset($active_type)) {
         .card,
         .card-premium,
         .accordion-item,
-        .accordion-button,
+        .accordion-button.collapsed,
         .accordion-body,
         .p-4.border.rounded-3,
-        .shadow-hover {
+        .shadow-hover,
+        .table,
+        .table th,
+        .table td,
+        .table-light,
+        .list-group-item,
+        .modal-content {
             background-color: var(--card-bg) !important;
+            background-image: none !important;
         }
     </style>
 </head>
@@ -217,3 +224,4 @@ if (!isset($active_type)) {
         </div>
     </nav>
     <main>
+

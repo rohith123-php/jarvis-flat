@@ -505,7 +505,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
                                         <i class="fa-solid fa-crown text-warning" style="font-size: 0.75rem;"></i> JARVIS VERIFIED
                                     </span>
                                     <!-- 4-Photo View Switcher Strip -->
-                                    <div class="position-absolute bottom-0 start-0 w-100 p-2 d-flex justify-content-center gap-1 z-2" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);">
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-2 d-flex justify-content-center gap-1 z-2" style="background: var(--card-bg) !important;">
                                         <button type="button" class="btn btn-xs py-0.5 px-2 text-white border-0 fw-semibold rounded-pill photo-slot-pill active" 
                                                 onclick="switchCardPhoto('<?php echo $flat_card_id; ?>', '<?php echo $ext_img; ?>', this)" 
                                                 style="font-size:0.65rem; background: var(--orange-brand); cursor:pointer;">
@@ -613,7 +613,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
                     <?php if ($needed >= 1): ?>
                     <!-- Filler Card 1: Pre-Launch Luxury Penthouse Teaser -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-premium h-100 d-flex flex-column justify-content-between position-relative border-warning border-opacity-50" style="background: linear-gradient(180deg, #ffffff 0%, #fffdf9 100%);">
+                        <div class="card card-premium h-100 d-flex flex-column justify-content-between position-relative border-warning border-opacity-50" style="background: var(--card-bg) !important;">
                             <div>
                                 <div class="card-image-wrapper position-relative">
                                     <img src="<?php echo $base_path; ?>images/bedroom.png" alt="Pre-Launch Teaser Preview" style="object-fit: cover; filter: brightness(0.92);">
@@ -651,10 +651,10 @@ function switchCardPhoto(imgId, newSrc, btn) {
                     <?php if ($needed >= 2): ?>
                     <!-- Filler Card 2: Bespoke VIP Concierge Desk -->
                     <div class="col-md-6 col-lg-4">
-                        <div class="card card-premium h-100 d-flex flex-column justify-content-between position-relative border-primary border-opacity-25 shadow-sm" style="background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%); color: #ffffff;">
+                        <div class="card card-premium h-100 d-flex flex-column justify-content-between position-relative border-primary border-opacity-25 shadow-sm" style="background: var(--card-bg) !important; color: #ffffff;">
                             <div class="p-4">
                                 <div class="d-flex align-items-center gap-3 mb-3">
-                                    <div class="position-relative d-inline-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: linear-gradient(135deg, #f2a122 0%, #d97706 100%); border-radius: 50%; box-shadow: 0 4px 15px rgba(242, 161, 34, 0.4); flex-shrink: 0;">
+                                    <div class="position-relative d-inline-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: var(--card-bg) !important; border-radius: 50%; box-shadow: 0 4px 15px rgba(242, 161, 34, 0.4); flex-shrink: 0;">
                                         <i class="fa-solid fa-crown text-white fs-4"></i>
                                         <span style="position: absolute; top: -1px; right: -1px; width: 10px; height: 10px; background-color: #103178; border: 1.5px solid #ffffff; border-radius: 50%; box-shadow: 0 0 10px rgba(16, 49, 120, 0.5);"></span>
                                     </div>
@@ -805,7 +805,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
     <!-- 6. GRAND APARTMENT GALLERY SHOWCASE SECTION (WHITE LIGHT LUXURY REDESIGN) -->
     <?php if (isset($only_gallery) || !$any_only): ?>
-    <section id="gallery" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="gallery" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--card-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient Soft Background Bubbles -->
         <div class="position-absolute top-0 end-0 opacity-05" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--orange-brand) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="position-absolute bottom-0 start-0 opacity-05" style="width: 300px; height: 300px; background: radial-gradient(circle, var(--blue-brand) 0%, transparent 70%); pointer-events: none;"></div>
@@ -839,7 +839,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
             <div class="col-md-6 col-lg-4 gallery-item-col" data-category="living" style="transition: all 0.3s ease-in-out;">
                 <div class="gallery-card-grand position-relative overflow-hidden rounded-3 shadow-md border border-light-subtle" style="height: 290px;">
                     <img src="<?php echo $base_path; ?>images/living.png" class="w-100 h-100 gallery-zoom-img" style="object-fit: cover; transition: transform 0.4s ease-in-out;" alt="Luxury Living Area">
-                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.85) 100%);">
+                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: var(--card-bg) !important;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="badge bg-warning text-dark fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.5px;">Living Suite</span>
                             <span class="badge bg-dark bg-opacity-75 text-white border border-secondary border-opacity-30"><i class="fa-solid fa-expand me-1"></i> HD Preview</span>
@@ -856,7 +856,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
             <div class="col-md-6 col-lg-4 gallery-item-col" data-category="bedroom" style="transition: all 0.3s ease-in-out;">
                 <div class="gallery-card-grand position-relative overflow-hidden rounded-3 shadow-md border border-light-subtle" style="height: 290px;">
                     <img src="<?php echo $base_path; ?>images/bedroom.png" class="w-100 h-100 gallery-zoom-img" style="object-fit: cover; transition: transform 0.4s ease-in-out;" alt="Master Bedroom Suite">
-                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.85) 100%);">
+                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: var(--card-bg) !important;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="badge bg-warning text-dark fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.5px;">Master Suite</span>
                             <span class="badge bg-dark bg-opacity-75 text-white border border-secondary border-opacity-30"><i class="fa-solid fa-expand me-1"></i> HD Preview</span>
@@ -873,7 +873,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
             <div class="col-md-6 col-lg-4 gallery-item-col" data-category="kitchen" style="transition: all 0.3s ease-in-out;">
                 <div class="gallery-card-grand position-relative overflow-hidden rounded-3 shadow-md border border-light-subtle" style="height: 290px;">
                     <img src="<?php echo $base_path; ?>images/kitchen.png" class="w-100 h-100 gallery-zoom-img" style="object-fit: cover; transition: transform 0.4s ease-in-out;" alt="High-End Modular Kitchen">
-                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.85) 100%);">
+                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: var(--card-bg) !important;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="badge bg-warning text-dark fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.5px;">Kitchen</span>
                             <span class="badge bg-dark bg-opacity-75 text-white border border-secondary border-opacity-30"><i class="fa-solid fa-expand me-1"></i> HD Preview</span>
@@ -890,7 +890,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
             <div class="col-md-6 col-lg-4 gallery-item-col" data-category="pool" style="transition: all 0.3s ease-in-out;">
                 <div class="gallery-card-grand position-relative overflow-hidden rounded-3 shadow-md border border-light-subtle" style="height: 290px;">
                     <img src="<?php echo $base_path; ?>images/pool.png" class="w-100 h-100 gallery-zoom-img" style="object-fit: cover; transition: transform 0.4s ease-in-out;" alt="Rooftop Infinity Swimming Pool">
-                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.85) 100%);">
+                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: var(--card-bg) !important;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="badge bg-info text-dark fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.5px;">Resort Amenity</span>
                             <span class="badge bg-dark bg-opacity-75 text-white border border-secondary border-opacity-30"><i class="fa-solid fa-expand me-1"></i> HD Preview</span>
@@ -907,7 +907,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
             <div class="col-md-6 col-lg-4 gallery-item-col" data-category="fitness" style="transition: all 0.3s ease-in-out;">
                 <div class="gallery-card-grand position-relative overflow-hidden rounded-3 shadow-md border border-light-subtle" style="height: 290px;">
                     <img src="<?php echo $base_path; ?>images/gym.png" class="w-100 h-100 gallery-zoom-img" style="object-fit: cover; transition: transform 0.4s ease-in-out;" alt="Modern Fitness Center">
-                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.85) 100%);">
+                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: var(--card-bg) !important;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="badge bg-success text-white fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.5px;">Fitness</span>
                             <span class="badge bg-dark bg-opacity-75 text-white border border-secondary border-opacity-30"><i class="fa-solid fa-expand me-1"></i> HD Preview</span>
@@ -924,7 +924,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
             <div class="col-md-6 col-lg-4 gallery-item-col" data-category="living" style="transition: all 0.3s ease-in-out;">
                 <div class="gallery-card-grand position-relative overflow-hidden rounded-3 shadow-md border border-light-subtle" style="height: 290px;">
                     <img src="<?php echo $base_path; ?>images/lobby.png" class="w-100 h-100 gallery-zoom-img" style="object-fit: cover; transition: transform 0.4s ease-in-out;" alt="Grand Entrance Lobby">
-                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.85) 100%);">
+                    <div class="gallery-overlay-gradient position-absolute inset-0 d-flex flex-column justify-content-between p-3.5" style="background: var(--card-bg) !important;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="badge bg-warning text-dark fw-bold text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.5px;">Concierge</span>
                             <span class="badge bg-dark bg-opacity-75 text-white border border-secondary border-opacity-30"><i class="fa-solid fa-expand me-1"></i> HD Preview</span>
@@ -997,7 +997,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
     <!-- 7. FLOOR PLANS & 8. PRICING PLANS (WHITE LIGHT LUXURY REDESIGN) -->
     <?php if (isset($only_pricing) || !$any_only): ?>
-    <section id="pricing" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="pricing" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--card-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient Soft Background Bubbles -->
         <div class="position-absolute top-0 start-0 opacity-05" style="width: 350px; height: 350px; background: radial-gradient(circle, var(--orange-brand) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="position-absolute bottom-0 end-0 opacity-05" style="width: 350px; height: 350px; background: radial-gradient(circle, var(--blue-brand) 0%, transparent 70%); pointer-events: none;"></div>
@@ -1135,7 +1135,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
                 <!-- High-Contrast Light Luxury Pricing Table -->
                 <div class="table-responsive rounded-3 overflow-hidden border border-light-subtle shadow-sm mb-4">
-                    <table class="table table-light table-hover align-middle text-center mb-0" style="background: var(--site-bg) !important;">
+                    <table class="table table-light table-hover align-middle text-center mb-0" style="background: var(--card-bg) !important;">
                         <thead>
                             <tr class="text-dark text-uppercase border-bottom border-light-subtle" style="font-size: 0.8rem; letter-spacing: 1px; background-color: #f1f5f9 !important;">
                                 <th class="py-3 text-start ps-3 text-dark">Flat Configuration</th>
@@ -1209,7 +1209,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
         $sec_stat4_val     = get_setting('about_stat4_val', '100%');
         $sec_stat4_lbl     = get_setting('about_stat4_lbl', 'RERA Approved');
     ?>
-    <section id="about" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="about" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--card-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient Soft Background Bubbles -->
         <div class="position-absolute top-0 start-0 opacity-05" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--orange-brand) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="position-absolute bottom-0 end-0 opacity-05" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--blue-brand) 0%, transparent 70%); pointer-events: none;"></div>
@@ -1290,7 +1290,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
             <div class="row g-4">
                 <!-- 1. Rapid Transit Access -->
                 <div class="col-md-4">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--orange-brand) !important; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--orange-brand) !important; background: var(--card-bg) !important;">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-20 px-2.5 py-1 rounded-pill small fw-semibold">
                                 5 Mins Walk
@@ -1303,7 +1303,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
                 <!-- 2. Educational Corridor -->
                 <div class="col-md-4">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--blue-brand) !important; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--blue-brand) !important; background: var(--card-bg) !important;">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-20 px-2.5 py-1 rounded-pill small fw-semibold">
                                 Premier Hub
@@ -1316,7 +1316,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
                 <!-- 3. Arterial Connectivity -->
                 <div class="col-md-4">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--orange-brand) !important; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--orange-brand) !important; background: var(--card-bg) !important;">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <span class="badge bg-warning bg-opacity-15 text-dark border border-warning border-opacity-30 px-2.5 py-1 rounded-pill small fw-semibold">
                                 Direct Highway
@@ -1419,7 +1419,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
     <!-- 11. GOOGLE MAP & SURROUNDINGS (WHITE LIGHT LUXURY REDESIGN) -->
     <?php if (isset($only_contact) || !$any_only): ?>
-    <section id="map-section" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="map-section" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--card-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient Background Bubbles -->
         <div class="position-absolute top-0 end-0 opacity-05" style="width: 350px; height: 350px; background: radial-gradient(circle, var(--orange-brand) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="position-absolute bottom-0 start-0 opacity-05" style="width: 350px; height: 350px; background: radial-gradient(circle, var(--blue-brand) 0%, transparent 70%); pointer-events: none;"></div>
@@ -1546,7 +1546,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
     <?php endif; ?>
 
     <!-- 12. CONTACT FORM SECTION (WHITE LIGHT LUXURY REDESIGN) -->
-    <section id="contact" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden text-dark" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="contact" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden text-dark" style="background: var(--card-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient background decorations -->
         <div class="position-absolute end-0 bottom-0 opacity-05" style="font-size: 16rem; transform: translate(15%, 15%) rotate(-15deg); pointer-events: none; color: #000000;">
             <i class="fa-solid fa-headset"></i>
@@ -1695,7 +1695,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
     <!-- Book Site Visit Section -->
     <?php if (!$any_only): ?>
-    <section id="book-site-visit" class="container my-5 py-5 text-center text-white rounded" style="background: linear-gradient(135deg, var(--blue-brand) 0%, #0d2354 100%); position: relative; overflow: hidden; border-left: 5px solid var(--orange-brand);">
+    <section id="book-site-visit" class="container my-5 py-5 text-center text-white rounded" style="background: var(--card-bg) !important; position: relative; overflow: hidden; border-left: 5px solid var(--orange-brand);">
         <div class="position-absolute opacity-10 end-0 bottom-0" style="font-size: 15rem; transform: rotate(-15deg); pointer-events: none;"><i class="fa-solid fa-calendar-days text-white"></i></div>
         <div class="position-relative z-1 max-width-600 mx-auto">
             <h3 class="fw-bold text-uppercase mb-2" style="color: #ffffff !important; letter-spacing: 2px; font-family:'Plus Jakarta Sans', sans-serif;">Schedule a VIP Site Visit</h3>
@@ -1888,7 +1888,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
     <!-- ------------------------------------------------------------- -->
     <!-- INDUSTRIAL PROJECTS VIEW (Screenshot 3 Layout) -->
     <!-- ------------------------------------------------------------- -->
-    <div class="position-relative w-100 overflow-hidden mb-5" style="height: 480px; background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('<?php echo $base_path; ?>images/industrial_banner.png') center/cover no-repeat;">
+    <div class="position-relative w-100 overflow-hidden mb-5" style="height: 480px; background: var(--card-bg) !important; ?>images/industrial_banner.png') center/cover no-repeat;">
         <div class="position-absolute start-50 top-50 translate-middle text-center w-100 px-3">
             <div class="mb-3">
                 <i class="fa-solid fa-industry text-warning" style="font-size:3.5rem;"></i>
@@ -1947,7 +1947,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
     <!-- ------------------------------------------------------------- -->
     <!-- NRI BUYER VIEW (Screenshot 4 Layout) -->
     <!-- ------------------------------------------------------------- -->
-    <div class="position-relative w-100 d-flex align-items-center justify-content-center" style="min-height: 580px; background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('<?php echo $base_path; ?>images/nri_banner.png') center/cover no-repeat;">
+    <div class="position-relative w-100 d-flex align-items-center justify-content-center" style="min-height: 580px; background: var(--card-bg) !important; ?>images/nri_banner.png') center/cover no-repeat;">
         <div class="container my-5">
             <div class="row g-4 align-items-center">
                 <!-- Left Content Headline -->
@@ -2059,7 +2059,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
     <!-- ------------------------------------------------------------- -->
     <!-- OUR VENTURES VIEW (Screenshot 5 Layout) -->
     <!-- ------------------------------------------------------------- -->
-    <div class="position-relative w-100 overflow-hidden mb-5" style="height: 380px; background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('<?php echo $base_path; ?>images/ventures_banner.png') center/cover no-repeat;">
+    <div class="position-relative w-100 overflow-hidden mb-5" style="height: 380px; background: var(--card-bg) !important; ?>images/ventures_banner.png') center/cover no-repeat;">
         <div class="position-absolute start-50 top-50 translate-middle text-center w-100 px-3">
             <h1 class="display-4 fw-bold text-uppercase text-white tracking-widest text-shadow mb-2" style="font-family:'Plus Jakarta Sans', sans-serif;">Jarvis Group of Companies</h1>
             <p class="lead text-white text-shadow text-uppercase" style="letter-spacing:4px; font-size:0.95rem;">Our Diversified Ventures</p>
@@ -2158,7 +2158,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
     <!-- ------------------------------------------------------------- -->
     <!-- INVESTORS PAGE VIEW -->
     <!-- ------------------------------------------------------------- -->
-    <div class="position-relative w-100 overflow-hidden mb-5" style="height: 380px; background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('<?php echo $base_path; ?>images/nri_banner.png') center/cover no-repeat;">
+    <div class="position-relative w-100 overflow-hidden mb-5" style="height: 380px; background: var(--card-bg) !important; ?>images/nri_banner.png') center/cover no-repeat;">
         <div class="position-absolute start-50 top-50 translate-middle text-center w-100 px-3">
             <h1 class="display-4 fw-bold text-uppercase text-white tracking-widest text-shadow mb-2" style="font-family:'Plus Jakarta Sans', sans-serif;">Investor Relations</h1>
             <p class="lead text-white text-shadow text-uppercase" style="letter-spacing:4px; font-size:0.95rem;">Delivering Consistent Value & Market Leadership</p>
