@@ -218,7 +218,6 @@ if (!isset($active_type)) {
                                 <li><a class="dropdown-item py-2 text-danger rounded fw-bold" href="<?php echo $base_path; ?>index.php?logout=resident"><i class="fa-solid fa-right-from-bracket me-2"></i>Logout</a></li>
                             <?php else: ?>
                                 <li><a class="dropdown-item py-2 text-dark rounded fw-bold" href="<?php echo $base_path; ?>resident/login.php"><i class="fa-solid fa-right-to-bracket me-2 text-primary"></i>Resident Login</a></li>
-                                <li><a class="dropdown-item py-2 text-dark rounded fw-bold" href="<?php echo $base_path; ?>admin/login.php"><i class="fa-solid fa-user-shield me-2 text-warning"></i>Admin Panel</a></li>
                             <?php endif; ?>
                         </ul>
                     </div>
@@ -227,6 +226,7 @@ if (!isset($active_type)) {
         </div>
     </nav>
     <main>
+
 
 
 
