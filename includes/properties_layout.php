@@ -1135,7 +1135,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
                 <!-- High-Contrast Light Luxury Pricing Table -->
                 <div class="table-responsive rounded-3 overflow-hidden border border-light-subtle shadow-sm mb-4">
-                    <table class="table table-light table-hover align-middle text-center mb-0" style="background: var(--site-bg) !important;">
+                    <table class="table table-light table-hover align-middle text-center mb-0" >
                         <thead>
                             <tr class="text-dark text-uppercase border-bottom border-light-subtle" style="font-size: 0.8rem; letter-spacing: 1px; background-color: #f1f5f9 !important;">
                                 <th class="py-3 text-start ps-3 text-dark">Flat Configuration</th>
@@ -1290,7 +1290,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
             <div class="row g-4">
                 <!-- 1. Rapid Transit Access -->
                 <div class="col-md-4">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--orange-brand) !important; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--orange-brand) !important; background-color: var(--card-bg) !important;">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-20 px-2.5 py-1 rounded-pill small fw-semibold">
                                 5 Mins Walk
@@ -1303,7 +1303,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
                 <!-- 2. Educational Corridor -->
                 <div class="col-md-4">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--blue-brand) !important; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--blue-brand) !important; background-color: var(--card-bg) !important;">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-20 px-2.5 py-1 rounded-pill small fw-semibold">
                                 Premier Hub
@@ -1316,7 +1316,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
                 <!-- 3. Arterial Connectivity -->
                 <div class="col-md-4">
-                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--orange-brand) !important; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);">
+                    <div class="p-4 border rounded-4 bg-white h-100 shadow-sm shadow-hover transition-transform text-dark position-relative overflow-hidden" style="border-color: rgba(16, 49, 120, 0.12) !important; border-top: 4px solid var(--orange-brand) !important; background-color: var(--card-bg) !important;">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <span class="badge bg-warning bg-opacity-15 text-dark border border-warning border-opacity-30 px-2.5 py-1 rounded-pill small fw-semibold">
                                 Direct Highway
@@ -2605,3 +2605,4 @@ function simulateBrochureDownload() {
 </script>
 
 <?php require_once 'footer.php'; ?>
+
