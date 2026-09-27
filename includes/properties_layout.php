@@ -357,7 +357,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
     <!-- Search Section (Item 3) -->
     <?php if (isset($only_grid) || !$any_only): ?>
     <div class="container mb-5 mt-n4 position-relative" style="z-index: 100;">
-        <div class="card shadow-lg border-0 p-4" style="border-radius:16px; background-color: #ffffff; border-top: 5px solid var(--orange-brand) !important;">
+        <div class="card shadow-lg border-0 p-4" style="border-radius:16px; background-color: var(--site-bg); border-top: 5px solid var(--orange-brand) !important;">
             <h5 class="fw-bold mb-3 text-dark" style="font-family:'Plus Jakarta Sans', sans-serif;"><i class="fa-solid fa-magnifying-glass text-warning me-2"></i>Find Your Dream Flat</h5>
             <form action="flats.php" method="GET" class="row g-3">
                 <!-- Search by Apartment Name -->
@@ -805,7 +805,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
     <!-- 6. GRAND APARTMENT GALLERY SHOWCASE SECTION (WHITE LIGHT LUXURY REDESIGN) -->
     <?php if (isset($only_gallery) || !$any_only): ?>
-    <section id="gallery" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: #ffffff !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="gallery" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient Soft Background Bubbles -->
         <div class="position-absolute top-0 end-0 opacity-05" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--orange-brand) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="position-absolute bottom-0 start-0 opacity-05" style="width: 300px; height: 300px; background: radial-gradient(circle, var(--blue-brand) 0%, transparent 70%); pointer-events: none;"></div>
@@ -997,7 +997,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
     <!-- 7. FLOOR PLANS & 8. PRICING PLANS (WHITE LIGHT LUXURY REDESIGN) -->
     <?php if (isset($only_pricing) || !$any_only): ?>
-    <section id="pricing" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: #ffffff !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="pricing" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient Soft Background Bubbles -->
         <div class="position-absolute top-0 start-0 opacity-05" style="width: 350px; height: 350px; background: radial-gradient(circle, var(--orange-brand) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="position-absolute bottom-0 end-0 opacity-05" style="width: 350px; height: 350px; background: radial-gradient(circle, var(--blue-brand) 0%, transparent 70%); pointer-events: none;"></div>
@@ -1135,7 +1135,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
                 <!-- High-Contrast Light Luxury Pricing Table -->
                 <div class="table-responsive rounded-3 overflow-hidden border border-light-subtle shadow-sm mb-4">
-                    <table class="table table-light table-hover align-middle text-center mb-0" style="background: #ffffff !important;">
+                    <table class="table table-light table-hover align-middle text-center mb-0" style="background: var(--site-bg) !important;">
                         <thead>
                             <tr class="text-dark text-uppercase border-bottom border-light-subtle" style="font-size: 0.8rem; letter-spacing: 1px; background-color: #f1f5f9 !important;">
                                 <th class="py-3 text-start ps-3 text-dark">Flat Configuration</th>
@@ -1209,7 +1209,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
         $sec_stat4_val     = get_setting('about_stat4_val', '100%');
         $sec_stat4_lbl     = get_setting('about_stat4_lbl', 'RERA Approved');
     ?>
-    <section id="about" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: #ffffff !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="about" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient Soft Background Bubbles -->
         <div class="position-absolute top-0 start-0 opacity-05" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--orange-brand) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="position-absolute bottom-0 end-0 opacity-05" style="width: 400px; height: 400px; background: radial-gradient(circle, var(--blue-brand) 0%, transparent 70%); pointer-events: none;"></div>
@@ -1228,7 +1228,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
         </div>
 
         <!-- Builder Information Card -->
-        <div class="p-4 rounded-3 border mb-5 position-relative z-1 shadow-sm" style="background: #f8fafc !important; border: 1px solid rgba(242, 161, 34, 0.4) !important; border-left: 6px solid var(--orange-brand) !important;">
+        <div class="p-4 rounded-3 border mb-5 position-relative z-1 shadow-sm" style="background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(242, 161, 34, 0.4) !important; border-left: 6px solid var(--orange-brand) !important;">
             <div class="row align-items-center g-4">
                 <div class="col-lg-8">
                     <div class="d-flex align-items-center mb-3">
@@ -1419,7 +1419,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
     <!-- 11. GOOGLE MAP & SURROUNDINGS (WHITE LIGHT LUXURY REDESIGN) -->
     <?php if (isset($only_contact) || !$any_only): ?>
-    <section id="map-section" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: #ffffff !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="map-section" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient Background Bubbles -->
         <div class="position-absolute top-0 end-0 opacity-05" style="width: 350px; height: 350px; background: radial-gradient(circle, var(--orange-brand) 0%, transparent 70%); pointer-events: none;"></div>
         <div class="position-absolute bottom-0 start-0 opacity-05" style="width: 350px; height: 350px; background: radial-gradient(circle, var(--blue-brand) 0%, transparent 70%); pointer-events: none;"></div>
@@ -1546,7 +1546,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
     <?php endif; ?>
 
     <!-- 12. CONTACT FORM SECTION (WHITE LIGHT LUXURY REDESIGN) -->
-    <section id="contact" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden text-dark" style="background: #ffffff !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
+    <section id="contact" class="container my-5 p-4 p-md-5 rounded-4 shadow-lg position-relative overflow-hidden text-dark" style="background: var(--site-bg) !important; border: 1px solid rgba(0, 0, 0, 0.08); border-left: 6px solid var(--orange-brand) !important;">
         <!-- Ambient background decorations -->
         <div class="position-absolute end-0 bottom-0 opacity-05" style="font-size: 16rem; transform: translate(15%, 15%) rotate(-15deg); pointer-events: none; color: #000000;">
             <i class="fa-solid fa-headset"></i>
@@ -1709,7 +1709,8 @@ function switchCardPhoto(imgId, newSrc, btn) {
 
     <?php if (!$any_only): ?>
     <!-- Trust & Social Proof Section -->
-    <div class="container my-5 py-3">
+    <div class="py-5" style="background-color: var(--trust-bg);">
+        <div class="container my-5 py-3">
         <div class="text-center mb-5">
             <h3 class="fw-bold text-uppercase" style="letter-spacing: 2px;">Why Trust Jarvis Real Estate</h3>
             <p class="text-muted">Industry recognition and banking certifications verifying our excellence.</p>
@@ -1777,6 +1778,7 @@ function switchCardPhoto(imgId, newSrc, btn) {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 

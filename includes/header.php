@@ -18,6 +18,8 @@ $header_bg_color = get_setting('header_bg_color', '#ffffff');
 $logo_primary_color = get_setting('logo_primary_color', '#103178');
 $logo_accent_color  = get_setting('logo_accent_color', '#f39c12');
 $site_bg_color      = get_setting('site_bg_color', '#f8f9fa');
+$trust_bg_color     = get_setting('trust_bg_color', '#ffffff');
+
 $heading_font  = get_setting('heading_font', "'Playfair Display', serif");
 $body_font     = get_setting('body_font', "'Plus Jakarta Sans', sans-serif");
 
@@ -50,6 +52,7 @@ if (!isset($active_type)) {
             --logo-primary: <?php echo htmlspecialchars($logo_primary_color); ?> !important;
             --logo-accent: <?php echo htmlspecialchars($logo_accent_color); ?> !important;
             --site-bg: <?php echo htmlspecialchars($site_bg_color); ?> !important;
+            --trust-bg: <?php echo htmlspecialchars($trust_bg_color); ?> !important;
             --font-heading: <?php echo $heading_font; ?> !important;
             --font-body: <?php echo $body_font; ?> !important;
         }
@@ -62,6 +65,47 @@ if (!isset($active_type)) {
         }
         .navbar-custom {
             background-color: var(--header-bg) !important;
+        }
+    
+        .btn-warning, .btn-warning-custom {
+            background-color: var(--orange-brand) !important;
+            border-color: var(--orange-brand) !important;
+            color: #1a1a1a !important;
+        }
+        .btn-warning:hover, .btn-warning:focus, .btn-warning:active {
+            background-color: var(--orange-hover) !important;
+            border-color: var(--orange-hover) !important;
+            color: #1a1a1a !important;
+        }
+        .text-warning {
+            color: var(--orange-brand) !important;
+        }
+        .bg-warning {
+            background-color: var(--orange-brand) !important;
+        }
+        .border-warning {
+            border-color: var(--orange-brand) !important;
+        }
+        .btn-call-dropdown {
+            background-color: var(--orange-brand) !important;
+            border-color: var(--orange-brand) !important;
+        }
+
+    
+        #map-section,
+        #about,
+        #gallery,
+        #pricing,
+        #contact,
+        #amenities,
+        #apartments-showcase,
+        .bg-white:not(input):not(textarea):not(select),
+        .card,
+        .card-premium,
+        .p-4.border.rounded-3,
+        .shadow-hover {
+            background: var(--site-bg) !important;
+            background-color: var(--site-bg) !important;
         }
     </style>
 </head>
@@ -132,7 +176,7 @@ if (!isset($active_type)) {
                 <div class="d-flex align-items-center gap-2">
                     <!-- Call Us orange button dropdown -->
                     <div class="dropdown">
-                        <button class="btn btn-call-dropdown dropdown-toggle px-3 py-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius:4px; background-color:#f2a122; border:none; font-weight:700; color:#ffffff;">
+                        <button class="btn btn-call-dropdown dropdown-toggle px-3 py-2" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius:4px; background-color:var(--orange-brand); border:none; font-weight:700; color:#ffffff;">
                             CALL US <i class="fa-solid fa-phone ms-1" style="font-size: 0.8rem;"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end border-0 shadow p-2" style="min-width: max-content; white-space: nowrap;">

@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         'dark_heading_color'      => trim($_POST['dark_heading_color'] ?? '#0f172a'),
         'header_bg_color'         => trim($_POST['header_bg_color'] ?? '#ffffff'),
         'site_bg_color'           => trim($_POST['site_bg_color'] ?? '#f8f9fa'),
+        'trust_bg_color'          => trim($_POST['trust_bg_color'] ?? '#ffffff'),
         'heading_font'            => trim($_POST['heading_font'] ?? "'Playfair Display', serif"),
         'body_font'               => trim($_POST['body_font'] ?? "'Plus Jakarta Sans', sans-serif"),
 
@@ -157,6 +158,7 @@ $accent_color            = get_setting('accent_color', '#f2a122');
 $dark_heading_color      = get_setting('dark_heading_color', '#0f172a');
 $header_bg_color         = get_setting('header_bg_color', '#ffffff');
 $site_bg_color           = get_setting('site_bg_color', '#f8f9fa');
+$trust_bg_color          = get_setting('trust_bg_color', '#ffffff');
 $heading_font            = get_setting('heading_font', "'Playfair Display', serif");
 $body_font               = get_setting('body_font', "'Plus Jakarta Sans', sans-serif");
 
@@ -327,6 +329,13 @@ require_once 'includes/header.php';
                                     <div class="d-flex align-items-center gap-1">
                                         <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="site_bg_picker" value="<?php echo htmlspecialchars($site_bg_color); ?>" oninput="document.getElementById('site_bg_color').value = this.value;" style="width:34px; height:34px; cursor:pointer;">
                                         <input type="text" class="form-control form-control-sm font-monospace" id="site_bg_color" name="site_bg_color" value="<?php echo htmlspecialchars($site_bg_color); ?>" oninput="document.getElementById('site_bg_picker').value = this.value;" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.7rem;">Trust Section BG</label>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="trust_bg_picker" value="<?php echo htmlspecialchars($trust_bg_color); ?>" oninput="document.getElementById('trust_bg_color').value = this.value;" style="width:34px; height:34px; cursor:pointer;">
+                                        <input type="text" class="form-control form-control-sm font-monospace" id="trust_bg_color" name="trust_bg_color" value="<?php echo htmlspecialchars($trust_bg_color); ?>" oninput="document.getElementById('trust_bg_picker').value = this.value;" required>
                                     </div>
                                 </div>
                             </div>
