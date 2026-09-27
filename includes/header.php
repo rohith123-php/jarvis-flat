@@ -19,6 +19,7 @@ $logo_primary_color = get_setting('logo_primary_color', '#103178');
 $logo_accent_color  = get_setting('logo_accent_color', '#f39c12');
 $site_bg_color      = get_setting('site_bg_color', '#f8f9fa');
 $trust_bg_color     = get_setting('trust_bg_color', '#ffffff');
+$card_bg_color      = get_setting('card_bg_color', '#ffffff');
 
 $heading_font  = get_setting('heading_font', "'Playfair Display', serif");
 $body_font     = get_setting('body_font', "'Plus Jakarta Sans', sans-serif");
@@ -53,6 +54,7 @@ if (!isset($active_type)) {
             --logo-accent: <?php echo htmlspecialchars($logo_accent_color); ?> !important;
             --site-bg: <?php echo htmlspecialchars($site_bg_color); ?> !important;
             --trust-bg: <?php echo htmlspecialchars($trust_bg_color); ?> !important;
+            --card-bg: <?php echo htmlspecialchars($card_bg_color); ?> !important;
             --font-heading: <?php echo $heading_font; ?> !important;
             --font-body: <?php echo $body_font; ?> !important;
         }
@@ -100,6 +102,17 @@ if (!isset($active_type)) {
         #amenities,
         #apartments-showcase {
             background-color: var(--site-bg) !important;
+        }
+        /* Card and Panel Backgrounds */
+        .bg-white:not(input):not(textarea):not(select),
+        .card,
+        .card-premium,
+        .accordion-item,
+        .accordion-button,
+        .accordion-body,
+        .p-4.border.rounded-3,
+        .shadow-hover {
+            background-color: var(--card-bg) !important;
         }
     </style>
 </head>
