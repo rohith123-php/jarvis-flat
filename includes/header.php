@@ -105,10 +105,13 @@ if (!isset($active_type)) {
         }
         /* Card and Panel Backgrounds */
         .bg-white:not(input):not(textarea):not(select),
+        .bg-light,
+        .calc-card,
+        .testimonial-card,
         .card,
         .card-premium,
         .accordion-item,
-        .accordion-button.collapsed,
+        .accordion-button,
         .accordion-body,
         .p-4.border.rounded-3,
         .shadow-hover,
@@ -224,4 +227,7 @@ if (!isset($active_type)) {
         </div>
     </nav>
     <main>
+
+
+
 
