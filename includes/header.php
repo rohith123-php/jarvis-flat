@@ -47,7 +47,14 @@ if (!isset($active_type)) {
     <!-- Custom Stylesheet (with cache buster) -->
     <link href="<?php echo $base_path; ?>css/style.css?v=<?php echo time(); ?>" rel="stylesheet">
     <!-- Dynamic Customizer Stylesheet Override -->
-    <style>
+    <style>        @font-face {
+            font-family: 'NumberFontOverride';
+            font-style: normal;
+            font-weight: 400 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf) format('truetype');
+            unicode-range: U+30-39, U+20B9, U+2C, U+2E, U+0025; /* 0-9, ?, comma, period, % */
+        }
         :root {
             --blue-brand: <?php echo htmlspecialchars($primary_color); ?> !important;
             --orange-brand: <?php echo htmlspecialchars($accent_color); ?> !important;
@@ -65,11 +72,11 @@ if (!isset($active_type)) {
             --font-body: <?php echo $body_font; ?> !important;
         }
         body {
-            font-family: var(--font-body) !important;
+            font-family: 'NumberFontOverride', var(--font-body) !important;
             background-color: var(--site-bg) !important;
         }
         h1, h2, h3, h4, h5, h6, .font-heading, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6, .navbar-brand {
-            font-family: var(--font-heading) !important;
+            font-family: 'NumberFontOverride', var(--font-heading) !important;
         }
         .navbar-custom {
             background-color: var(--header-bg) !important;
@@ -233,6 +240,8 @@ if (!isset($active_type)) {
         </div>
     </nav>
     <main>
+
+
 
 
 
