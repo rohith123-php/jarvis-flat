@@ -1449,7 +1449,6 @@ function switchCardPhoto(imgId, newSrc, btn) {
                 </div>
                 <div class="mt-3 p-3 rounded-3 bg-light border border-light-subtle d-flex align-items-center justify-content-between text-dark shadow-xs">
                     <div class="d-flex align-items-center">
-                        <i class="fa-solid fa-location-crosshairs text-warning fs-5 me-2.5"></i>
                         <span class="small text-secondary">Exact Address: <strong class="text-dark">Jarvis Residences, Velachery Main Rd, Tambaram, Chennai - 600059</strong></span>
                     </div>
                     <a href="https://maps.google.com/?q=Madras+Christian+College+Tambaram" target="_blank" class="btn btn-sm btn-outline-warning text-uppercase font-bold" style="font-size: 0.72rem;"><i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Open Google Maps</a>
@@ -2605,4 +2604,6 @@ function simulateBrochureDownload() {
 </script>
 
 <?php require_once 'footer.php'; ?>
+
+
 
