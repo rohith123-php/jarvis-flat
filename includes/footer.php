@@ -12,19 +12,21 @@
                 <!-- Brand Profile -->
                 <div class="col-lg-3 col-md-6">
                     <div class="d-flex align-items-center mb-3">
-                        <div class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: linear-gradient(135deg, #103178 0%, #1c4b9c 100%); border-radius: 12px; border: 2px solid #F59E0B; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35); position: relative;">
-                            <i class="fa-solid fa-shield-halved" style="font-size: 1.45rem; color: #F59E0B;"></i>
-                            <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.75rem; color: #ffffff; top: 13px;"></i>
-                            <span style="position: absolute; top: -3px; right: -3px; width: 12px; height: 12px; background: linear-gradient(135deg, #ffd700 0%, #f59e0b 100%); border: 1.5px solid #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa-solid fa-diamond" style="font-size: 6px; color: #103178;"></i>
+                        <div class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; background: <?php echo htmlspecialchars(get_setting('logo_bg_color', '#f59e0b')); ?>; border-radius: 12px; border: 2.2px solid <?php echo htmlspecialchars(get_setting('logo_shield_color', '#103178')); ?>; box-shadow: 0 4px 12px rgba(0,0,0,0.3); position: relative;">
+                            <i class="fa-solid fa-shield" style="font-size: 1.55rem; color: <?php echo htmlspecialchars(get_setting('logo_shield_color', '#103178')); ?>;"></i>
+                            <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.8rem; color: #ffffff; top: 13px;"></i>
+                            <span style="position: absolute; top: -3px; right: -3px; width: 12px; height: 12px; background: <?php echo htmlspecialchars(get_setting('logo_shield_color', '#103178')); ?>; border: 1.5px solid #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-diamond" style="font-size: 5.5px; color: <?php echo htmlspecialchars(get_setting('logo_bg_color', '#f59e0b')); ?>;"></i>
                             </span>
                         </div>
                         <div class="lh-1">
-                            <div style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.9rem; background: linear-gradient(135deg, #ffd700 0%, #f39c12 50%, #ffd700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1.5px; display: flex; align-items: center; filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3));">
+                            <div class="d-flex align-items-center" style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.9rem; color: <?php echo htmlspecialchars(get_setting('logo_text_color', '#f59e0b')); ?>; letter-spacing: 1.5px;">
                                 <?php echo htmlspecialchars(strtoupper(get_setting('system_name', 'JARVIS'))); ?>
-                                <span style="color: var(--orange-brand); -webkit-text-fill-color: var(--orange-brand); font-weight: 300; font-size: 1.4rem; margin-left: 2px; margin-top: -6px;">✦</span>
+                                <svg class="logo-sparkle-star" width="18" height="18" viewBox="0 0 24 24" fill="<?php echo htmlspecialchars(get_setting('logo_text_color', '#f59e0b')); ?>" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-left: 5px;">
+                                    <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" fill="<?php echo htmlspecialchars(get_setting('logo_text_color', '#f59e0b')); ?>"/>
+                                </svg>
                             </div>
-                            <span style="display:block; font-size:0.52rem; letter-spacing:4px; color:var(--orange-brand); font-weight:700; text-transform:uppercase; margin-top:2px;"><?php echo htmlspecialchars(get_setting('brand_tagline', 'building aspirations')); ?></span>
+                            <span style="display:block; font-size:0.52rem; letter-spacing:4.5px; color:<?php echo htmlspecialchars(get_setting('logo_text_color', '#f59e0b')); ?>; font-weight:700; text-transform:uppercase; margin-top:2px; font-family:'Plus Jakarta Sans', sans-serif;"><?php echo htmlspecialchars(get_setting('brand_tagline', 'BUILDING ASPIRATIONS')); ?></span>
                         </div>
                     </div>
                     <p class="text-white-50 small" style="font-size: 0.78rem;">

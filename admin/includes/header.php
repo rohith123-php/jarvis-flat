@@ -7,9 +7,12 @@ if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: login.php");
     exit;
 }
-$system_name   = get_setting('system_name', 'Jarvis');
-$brand_tagline = get_setting('brand_tagline', 'BUILDING ASPIRATIONS');
-$primary_color = get_setting('primary_color', '#123B7A');
+$system_name        = get_setting('system_name', 'Jarvis');
+$brand_tagline      = get_setting('brand_tagline', 'BUILDING ASPIRATIONS');
+$primary_color      = get_setting('primary_color', '#103178');
+$logo_bg_color      = get_setting('logo_bg_color', get_setting('logo_accent_color', '#f59e0b'));
+$logo_shield_color  = get_setting('logo_shield_color', get_setting('logo_primary_color', '#103178'));
+$logo_text_color    = get_setting('logo_text_color', get_setting('logo_accent_color', '#f59e0b'));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +53,14 @@ $primary_color = get_setting('primary_color', '#123B7A');
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4) !important;
         }
+        .navbar-brand:hover .logo-crest {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 0 22px rgba(245, 158, 11, 0.8), inset 0 0 10px rgba(245, 158, 11, 0.25) !important;
+        }
+        .navbar-brand:hover .logo-sparkle-star {
+            transform: rotate(45deg) scale(1.15);
+            filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.9)) !important;
+        }
     </style>
 </head>
 <body class="admin-theme" style="background-color: #F5F7FA; color: #1F2937; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
@@ -57,23 +68,26 @@ $primary_color = get_setting('primary_color', '#123B7A');
     <!-- Compact Top Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top shadow-sm py-2.5" style="background-color: <?php echo htmlspecialchars($primary_color); ?>;">
         <div class="container-fluid px-4">
-            <!-- Brand Logo: Exact Match to Frontend Page -->
+            <!-- Brand Logo: Exact Match to Reference with Dynamic Customizer Support -->
             <a class="navbar-brand d-flex align-items-center me-4" href="dashboard.php" style="text-decoration: none;">
-                <!-- Royal Shield & Crown Crest Emblem -->
-                <div class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: linear-gradient(135deg, #103178 0%, #1c4b9c 100%); border-radius: 14px; border: 2px solid #F59E0B; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35); position: relative; transition: all 0.3s ease; cursor: pointer;">
-                    <i class="fa-solid fa-shield-halved" style="font-size: 1.55rem; color: #F59E0B; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
-                    <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.82rem; color: #ffffff; top: 13px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));"></i>
-                    <span style="position: absolute; top: -4px; right: -4px; width: 14px; height: 14px; background: linear-gradient(135deg, #ffd700 0%, #f59e0b 100%); border: 1.5px solid #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(245, 158, 11, 0.8); display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-diamond" style="font-size: 7px; color: #103178;"></i>
+                <!-- Royal Shield Emblem -->
+                <div class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: <?php echo htmlspecialchars($logo_bg_color); ?>; border-radius: 14px; border: 2.5px solid <?php echo htmlspecialchars($logo_shield_color); ?>; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), 0 0 14px <?php echo htmlspecialchars($logo_bg_color); ?>88; position: relative; transition: all 0.3s ease; cursor: pointer;">
+                    <i class="fa-solid fa-shield" style="font-size: 1.7rem; color: <?php echo htmlspecialchars($logo_shield_color); ?>; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));"></i>
+                    <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.85rem; color: #ffffff; top: 14px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));"></i>
+                    <span style="position: absolute; top: -4px; right: -4px; width: 14px; height: 14px; background: <?php echo htmlspecialchars($logo_shield_color); ?>; border: 2px solid #ffffff; border-radius: 50%; box-shadow: 0 0 6px rgba(0, 0, 0, 0.4); display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-diamond" style="font-size: 6px; color: <?php echo htmlspecialchars($logo_bg_color); ?>;"></i>
                     </span>
                 </div>
                 <div class="lh-1">
-                    <div class="d-flex align-items-center" style="font-family: 'Playfair Display', 'Plus Jakarta Sans', serif; font-weight: 900; font-size: 2.1rem; background: linear-gradient(135deg, #ffd700 0%, #f39c12 50%, #ffd700 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1.5px; text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.05); filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.15));">
+                    <div class="d-flex align-items-center" style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.1rem; color: <?php echo htmlspecialchars($logo_text_color); ?>; letter-spacing: 1.5px; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">
                         <?php echo htmlspecialchars(strtoupper($system_name)); ?>
-                        <span style="color: #f59e0b; -webkit-text-fill-color: #f59e0b; font-weight: 300; font-size: 1.5rem; margin-left: 3px; margin-top: -5px;">✦</span>
-                        <span class="badge bg-amber text-dark ms-2.5 px-2 py-0.5 fw-bold align-middle" style="background-color: #F59E0B; font-size: 0.68rem; letter-spacing: 1px; font-family: 'Inter', sans-serif; -webkit-text-fill-color: #0f172a; border-radius: 6px; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.4);">ADMIN</span>
+                        <!-- Solid 4-Point Filled Sparkle Star -->
+                        <svg class="logo-sparkle-star" width="20" height="20" viewBox="0 0 24 24" fill="<?php echo htmlspecialchars($logo_text_color); ?>" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-left: 6px; filter: drop-shadow(0 0 5px <?php echo htmlspecialchars($logo_text_color); ?>aa);">
+                            <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" fill="<?php echo htmlspecialchars($logo_text_color); ?>"/>
+                        </svg>
+                        <span class="badge bg-amber text-dark ms-2.5 px-2 py-0.5 fw-bold align-middle" style="background-color: <?php echo htmlspecialchars($logo_text_color); ?>; font-size: 0.68rem; letter-spacing: 1px; font-family: 'Inter', sans-serif; -webkit-text-fill-color: #0f172a; border-radius: 6px; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.4);">ADMIN</span>
                     </div>
-                    <span style="display:block; font-size:0.56rem; letter-spacing:4px; color:#f59e0b; font-weight:700; text-transform:uppercase; margin-top:3px;"><?php echo htmlspecialchars($brand_tagline); ?></span>
+                    <span style="display:block; font-size:0.56rem; letter-spacing:4.5px; color:<?php echo htmlspecialchars($logo_text_color); ?>; font-weight:700; text-transform:uppercase; margin-top:3px;"><?php echo htmlspecialchars($brand_tagline); ?></span>
                 </div>
             </a>
 

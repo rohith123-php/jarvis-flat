@@ -15,8 +15,11 @@ $primary_color = get_setting('primary_color', '#103178');
 $accent_color  = get_setting('accent_color', '#f2a122');
 $dark_heading_color = get_setting('dark_heading_color', '#0f172a');
 $header_bg_color = get_setting('header_bg_color', '#ffffff');
-$logo_primary_color = get_setting('logo_primary_color', '#103178');
-$logo_accent_color  = get_setting('logo_accent_color', '#f39c12');
+$logo_bg_color      = get_setting('logo_bg_color', get_setting('logo_accent_color', '#f59e0b'));
+$logo_shield_color  = get_setting('logo_shield_color', get_setting('logo_primary_color', '#103178'));
+$logo_text_color    = get_setting('logo_text_color', get_setting('logo_accent_color', '#f59e0b'));
+$logo_primary_color = $logo_shield_color;
+$logo_accent_color  = $logo_bg_color;
 $site_bg_color      = get_setting('site_bg_color', '#f8f9fa');
 $trust_bg_color     = get_setting('trust_bg_color', '#ffffff');
 $card_bg_color      = get_setting('card_bg_color', '#ffffff');
@@ -50,8 +53,11 @@ if (!isset($active_type)) {
             --orange-brand: <?php echo htmlspecialchars($accent_color); ?> !important;
             --orange-hover: <?php echo htmlspecialchars($accent_color); ?>ee !important;
             --header-bg: <?php echo htmlspecialchars($header_bg_color); ?> !important;
-            --logo-primary: <?php echo htmlspecialchars($logo_primary_color); ?> !important;
-            --logo-accent: <?php echo htmlspecialchars($logo_accent_color); ?> !important;
+            --logo-bg: <?php echo htmlspecialchars($logo_bg_color); ?> !important;
+            --logo-shield: <?php echo htmlspecialchars($logo_shield_color); ?> !important;
+            --logo-text: <?php echo htmlspecialchars($logo_text_color); ?> !important;
+            --logo-primary: <?php echo htmlspecialchars($logo_shield_color); ?> !important;
+            --logo-accent: <?php echo htmlspecialchars($logo_bg_color); ?> !important;
             --site-bg: <?php echo htmlspecialchars($site_bg_color); ?> !important;
             --trust-bg: <?php echo htmlspecialchars($trust_bg_color); ?> !important;
             --card-bg: <?php echo htmlspecialchars($card_bg_color); ?> !important;
@@ -133,20 +139,21 @@ if (!isset($active_type)) {
         <div class="container-fluid px-4">
             <!-- Brand Logo: Royal Shield & Crown Crest -->
             <a class="navbar-brand d-flex align-items-center" href="<?php echo $base_path; ?>index.php" style="text-decoration: none;">
-                <!-- Royal Shield & Crown Crest Emblem -->
-                <div class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px; background: var(--logo-primary); border-radius: 14px; border: 2px solid var(--logo-accent); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); position: relative; transition: all 0.3s ease; cursor: pointer;">
-                    <i class="fa-solid fa-shield-halved" style="font-size: 1.6rem; color: var(--logo-accent); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
-                    <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.85rem; color: #ffffff; top: 14px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));"></i>
-                    <span style="position: absolute; top: -4px; right: -4px; width: 14px; height: 14px; background: var(--logo-accent); border: 1.5px solid #ffffff; border-radius: 50%; box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center;">
-                        <i class="fa-solid fa-diamond" style="font-size: 7px; color: var(--logo-primary);"></i>
-                    </span>
+                <!-- Royal Shield Emblem -->
+                <div class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 52px; height: 52px; background: <?php echo htmlspecialchars($logo_bg_color); ?>; border-radius: 14px; border: 2.5px solid <?php echo htmlspecialchars($logo_shield_color); ?>; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), 0 0 14px <?php echo htmlspecialchars($logo_bg_color); ?>88; position: relative; transition: all 0.3s ease; cursor: pointer;">
+                    <i class="fa-solid fa-shield" style="font-size: 1.75rem; color: <?php echo htmlspecialchars($logo_shield_color); ?>; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));"></i>
+                    <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.88rem; color: #ffffff; top: 14px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));"></i>
+                    
                 </div>
                 <div class="lh-1">
-                    <div style="font-family: 'Playfair Display', 'Plus Jakarta Sans', serif; font-weight: 900; font-size: 2.2rem; color: var(--logo-accent); letter-spacing: 1.5px; display: flex; align-items: center; text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.05); filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.15));">
+                    <div class="d-flex align-items-center" style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.2rem; color: <?php echo htmlspecialchars($logo_text_color); ?>; letter-spacing: 1.5px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">
                         <?php echo htmlspecialchars(strtoupper($system_name)); ?>
-                        <span style="color: var(--logo-accent); -webkit-text-fill-color: var(--logo-accent); font-weight: 300; font-size: 1.6rem; margin-left: 3px; margin-top: -6px;">✦</span>
+                        <!-- Solid 4-Point Filled Sparkle Star -->
+                        <svg class="logo-sparkle-star" width="22" height="22" viewBox="0 0 24 24" fill="<?php echo htmlspecialchars($logo_text_color); ?>" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-left: 6px; filter: drop-shadow(0 0 4px <?php echo htmlspecialchars($logo_text_color); ?>88);">
+                            <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" fill="<?php echo htmlspecialchars($logo_text_color); ?>"/>
+                        </svg>
                     </div>
-                    <span style="display:block; font-size:0.58rem; letter-spacing:4.5px; color:var(--logo-accent); font-weight:700; text-transform:uppercase; margin-top:3px;"><?php echo htmlspecialchars($brand_tagline); ?></span>
+                    <span style="display:block; font-size:0.56rem; letter-spacing:5px; color:<?php echo htmlspecialchars($logo_text_color); ?>; font-weight:800; text-transform:uppercase; margin-top:3px; font-family:'Plus Jakarta Sans', sans-serif;"><?php echo htmlspecialchars($brand_tagline); ?></span>
                 </div>
             </a>
 
@@ -226,6 +233,7 @@ if (!isset($active_type)) {
         </div>
     </nav>
     <main>
+
 
 
 

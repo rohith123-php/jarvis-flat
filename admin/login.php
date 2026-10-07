@@ -41,6 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+$login_logo_bg     = get_setting('logo_bg_color', '#f59e0b');
+$login_logo_shield = get_setting('logo_shield_color', '#103178');
+$login_logo_text   = get_setting('logo_text_color', '#103178');
 require_once '../includes/header.php';
 ?>
 
@@ -49,11 +52,24 @@ require_once '../includes/header.php';
         <div class="col-md-5">
             <div class="card card-premium p-4">
                 <div class="text-center mb-4">
-                    <div class="d-inline-flex bg-primary-subtle text-primary p-3 rounded-circle mb-3">
-                        <i class="fa-solid fa-lock-open fa-2x text-indigo"></i>
+                    <div class="d-inline-flex justify-content-center align-items-center mb-3">
+                        <div class="logo-crest d-flex align-items-center justify-content-center" style="width: 58px; height: 58px; background: <?php echo htmlspecialchars($login_logo_bg); ?>; border-radius: 16px; border: 2.5px solid <?php echo htmlspecialchars($login_logo_shield); ?>; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12), 0 0 16px <?php echo htmlspecialchars($login_logo_bg); ?>88; position: relative;">
+                            <i class="fa-solid fa-shield" style="font-size: 2rem; color: <?php echo htmlspecialchars($login_logo_shield); ?>; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));"></i>
+                            <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.95rem; color: #ffffff; top: 16px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));"></i>
+                            <span style="position: absolute; top: -4px; right: -4px; width: 16px; height: 16px; background: <?php echo htmlspecialchars($login_logo_shield); ?>; border: 2px solid #ffffff; border-radius: 50%; box-shadow: 0 0 6px rgba(0, 0, 0, 0.35); display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-diamond" style="font-size: 7px; color: <?php echo htmlspecialchars($login_logo_bg); ?>;"></i>
+                            </span>
+                        </div>
                     </div>
-                    <h3 class="fw-bold">Admin Portal</h3>
-                    <p class="text-muted">Enter credentials to manage your community</p>
+                    <div class="d-flex align-items-center justify-content-center mb-0" style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.3rem; color: <?php echo htmlspecialchars($login_logo_text); ?>; letter-spacing: 1.5px; text-shadow: 0 1px 2px rgba(0,0,0,0.08);">
+                        <span><?php echo htmlspecialchars(strtoupper(get_setting('system_name', 'JARVIS'))); ?></span>
+                        <svg class="logo-sparkle-star" width="22" height="22" viewBox="0 0 24 24" fill="<?php echo htmlspecialchars($login_logo_text); ?>" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-left: 6px; filter: drop-shadow(0 0 3px rgba(16, 49, 120, 0.3));">
+                            <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" fill="<?php echo htmlspecialchars($login_logo_text); ?>"/>
+                        </svg>
+                    </div>
+                    <span style="display:block; font-size:0.56rem; letter-spacing:5px; color:<?php echo htmlspecialchars($login_logo_text); ?>; font-weight:800; text-transform:uppercase; margin-top:2px; margin-bottom:15px; font-family:'Plus Jakarta Sans', sans-serif;"><?php echo htmlspecialchars(get_setting('brand_tagline', 'BUILDING ASPIRATIONS')); ?></span>
+                    <h6 class="fw-bold text-dark mb-1">Admin Portal</h6>
+                    <p class="text-muted small mb-0">Enter credentials to manage your community</p>
                 </div>
 
                 <?php if (!empty($error)): ?>

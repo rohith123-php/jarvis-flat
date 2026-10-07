@@ -56,8 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         'brand_tagline'           => trim($_POST['brand_tagline'] ?? 'BUILDING ASPIRATIONS'),
         'currency_symbol'         => trim($_POST['currency_symbol'] ?? '₹'),
         'currency_code'           => trim($_POST['currency_code'] ?? 'INR'),
-        'logo_primary_color'      => trim($_POST['logo_primary_color'] ?? '#103178'),
-        'logo_accent_color'       => trim($_POST['logo_accent_color'] ?? '#f39c12'),
+        'logo_bg_color'           => trim($_POST['logo_bg_color'] ?? '#f59e0b'),
+        'logo_shield_color'       => trim($_POST['logo_shield_color'] ?? '#103178'),
+        'logo_text_color'         => trim($_POST['logo_text_color'] ?? '#f59e0b'),
+        'logo_primary_color'      => trim($_POST['logo_shield_color'] ?? '#103178'),
+        'logo_accent_color'       => trim($_POST['logo_bg_color'] ?? '#f59e0b'),
 
         // 2. Theme Colors & Typography Customizer
         'primary_color'           => trim($_POST['primary_color'] ?? '#103178'),
@@ -151,8 +154,11 @@ $brand_tagline           = get_setting('brand_tagline', 'BUILDING ASPIRATIONS');
 $currency_symbol         = get_setting('currency_symbol', '₹');
 if ($currency_symbol === '$' || empty($currency_symbol)) { $currency_symbol = '₹'; }
 $currency_code           = get_setting('currency_code', 'INR');
+$logo_bg_color           = get_setting('logo_bg_color', '#f59e0b');
+$logo_shield_color       = get_setting('logo_shield_color', '#103178');
+$logo_text_color         = get_setting('logo_text_color', '#f59e0b');
 $logo_primary_color      = get_setting('logo_primary_color', '#103178');
-$logo_accent_color       = get_setting('logo_accent_color', '#f39c12');
+$logo_accent_color       = get_setting('logo_accent_color', '#f59e0b');
 
 $primary_color           = get_setting('primary_color', '#103178');
 $accent_color            = get_setting('accent_color', '#f2a122');
@@ -246,19 +252,104 @@ require_once 'includes/header.php';
                 <input type="hidden" name="action" value="save_settings">
 
                 <div class="row g-4">
-                    <!-- 1. Global Branding & Currency -->
+                    <!-- 1. Global Branding & Logo Studio -->
                     <div class="col-lg-6">
                         <div class="card card-premium p-4 h-100 border border-light-subtle shadow-sm rounded-3" style="background:#fff;">
-                            <h5 class="fw-bold mb-3" style="color:var(--blue-brand);"><i class="fa-solid fa-crown text-warning me-2"></i>Branding & Currency</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0" style="color:var(--blue-brand);"><i class="fa-solid fa-crown text-warning me-2"></i>Logo & Brand Customizer</h5>
+                                <span class="badge bg-warning-subtle text-dark fw-bold px-2 py-1 fs-8 border border-warning">Live Studio</span>
+                            </div>
+
+                            <!-- Live Dynamic Logo Preview Box -->
+                            <div class="mb-3 p-3 rounded-3 border" style="background: #0f172a; box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="text-white-50 small fw-bold text-uppercase" style="font-size: 0.68rem; letter-spacing: 1px;"><i class="fa-solid fa-eye me-1 text-warning"></i> Real-Time Logo Preview</span>
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <button type="button" class="btn btn-outline-light btn-sm py-0 px-2 active" id="btnPreviewDark" onclick="togglePreviewBg('dark')" style="font-size: 0.7rem;">Dark BG</button>
+                                        <button type="button" class="btn btn-outline-light btn-sm py-0 px-2" id="btnPreviewLight" onclick="togglePreviewBg('light')" style="font-size: 0.7rem;">Light BG</button>
+                                    </div>
+                                </div>
+                                <div id="logoPreviewContainer" class="p-3 rounded-2 d-flex align-items-center justify-content-center transition-all" style="background: #103178; min-height: 80px;">
+                                    <div class="d-flex align-items-center">
+                                        <!-- Emblem Preview -->
+                                        <div id="previewCrest" class="logo-crest me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: <?php echo htmlspecialchars($logo_bg_color); ?>; border-radius: 14px; border: 2.5px solid <?php echo htmlspecialchars($logo_shield_color); ?>; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25), 0 0 14px <?php echo htmlspecialchars($logo_bg_color); ?>88; position: relative;">
+                                            <i id="previewShield" class="fa-solid fa-shield" style="font-size: 1.7rem; color: <?php echo htmlspecialchars($logo_shield_color); ?>; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));"></i>
+                                            <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.85rem; color: #ffffff; top: 14px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));"></i>
+                                            <span id="previewBadge" style="position: absolute; top: -4px; right: -4px; width: 14px; height: 14px; background: <?php echo htmlspecialchars($logo_shield_color); ?>; border: 2px solid #ffffff; border-radius: 50%; box-shadow: 0 0 6px rgba(0, 0, 0, 0.4); display: flex; align-items: center; justify-content: center;">
+                                                <i id="previewDiamond" class="fa-solid fa-diamond" style="font-size: 6px; color: <?php echo htmlspecialchars($logo_bg_color); ?>;"></i>
+                                            </span>
+                                        </div>
+                                        <!-- Text & Sparkle Preview -->
+                                        <div class="lh-1">
+                                            <div class="d-flex align-items-center" style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.9rem; color: <?php echo htmlspecialchars($logo_text_color); ?>; letter-spacing: 1.5px;">
+                                                <span id="previewBrandName"><?php echo htmlspecialchars(strtoupper($system_name)); ?></span>
+                                                <svg id="previewSparkle" class="logo-sparkle-star" width="20" height="20" viewBox="0 0 24 24" fill="<?php echo htmlspecialchars($logo_text_color); ?>" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-left: 6px;">
+                                                    <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" fill="<?php echo htmlspecialchars($logo_text_color); ?>"/>
+                                                </svg>
+                                                <span id="previewAdminBadge" class="badge bg-amber text-dark ms-2 px-1.5 py-0.5 fw-bold align-middle" style="background-color: <?php echo htmlspecialchars($logo_text_color); ?>; font-size: 0.62rem; letter-spacing: 1px; font-family: 'Inter', sans-serif;">ADMIN</span>
+                                            </div>
+                                            <span id="previewTagline" style="display:block; font-size:0.52rem; letter-spacing:4px; color:<?php echo htmlspecialchars($logo_text_color); ?>; font-weight:700; text-transform:uppercase; margin-top:3px;"><?php echo htmlspecialchars($brand_tagline); ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 1-Click Instant Presets -->
+                            <div class="mb-3">
+                                <label class="form-label fw-bold text-uppercase small text-muted mb-1" style="font-size: 0.68rem;">1-Click Design Presets</label>
+                                <div class="d-flex flex-wrap gap-1.5">
+                                    <button type="button" class="btn btn-sm btn-outline-warning text-dark fw-bold px-2 py-1" onclick="applyLogoPreset('#f59e0b', '#103178', '#f59e0b')" style="font-size:0.75rem;">
+                                        <i class="fa-solid fa-circle text-warning me-1"></i> Royal Gold Badge (Logo 3)
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary fw-bold px-2 py-1" onclick="applyLogoPreset('#103178', '#f59e0b', '#f59e0b')" style="font-size:0.75rem;">
+                                        <i class="fa-solid fa-circle text-primary me-1"></i> Midnight Blue Badge (Logo 1/2)
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-success fw-bold px-2 py-1" onclick="applyLogoPreset('#059669', '#f59e0b', '#f59e0b')" style="font-size:0.75rem;">
+                                        <i class="fa-solid fa-circle text-success me-1"></i> Emerald & Gold
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-danger fw-bold px-2 py-1" onclick="applyLogoPreset('#dc2626', '#f59e0b', '#f59e0b')" style="font-size:0.75rem;">
+                                        <i class="fa-solid fa-circle text-danger me-1"></i> Ruby & Gold
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Fine-Tuning Color Controls -->
+                            <div class="row g-2 mb-3">
+                                <div class="col-4">
+                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.68rem;">Badge Background</label>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="logo_bg_picker" value="<?php echo htmlspecialchars($logo_bg_color); ?>" oninput="updateLogoColorsFromPicker();" style="width:34px; height:34px; cursor:pointer;">
+                                        <input type="text" class="form-control form-control-sm font-monospace" id="logo_bg_color" name="logo_bg_color" value="<?php echo htmlspecialchars($logo_bg_color); ?>" oninput="syncPickerFromText('logo_bg');" required>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.68rem;">Shield & Border</label>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="logo_shield_picker" value="<?php echo htmlspecialchars($logo_shield_color); ?>" oninput="updateLogoColorsFromPicker();" style="width:34px; height:34px; cursor:pointer;">
+                                        <input type="text" class="form-control form-control-sm font-monospace" id="logo_shield_color" name="logo_shield_color" value="<?php echo htmlspecialchars($logo_shield_color); ?>" oninput="syncPickerFromText('logo_shield');" required>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.68rem;">Wordmark & Star</label>
+                                    <div class="d-flex align-items-center gap-1">
+                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="logo_text_picker" value="<?php echo htmlspecialchars($logo_text_color); ?>" oninput="updateLogoColorsFromPicker();" style="width:34px; height:34px; cursor:pointer;">
+                                        <input type="text" class="form-control form-control-sm font-monospace" id="logo_text_color" name="logo_text_color" value="<?php echo htmlspecialchars($logo_text_color); ?>" oninput="syncPickerFromText('logo_text');" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-3 text-muted">
+
+                            <!-- System Name, Tagline & Currency -->
                             <div class="mb-3">
                                 <label class="form-label fw-bold text-uppercase small">Application / Brand Name</label>
-                                <input type="text" class="form-control" name="system_name" value="<?php echo htmlspecialchars($system_name); ?>" required>
+                                <input type="text" class="form-control" id="inputSystemName" name="system_name" value="<?php echo htmlspecialchars($system_name); ?>" oninput="document.getElementById('previewBrandName').textContent = this.value.toUpperCase();" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label fw-bold text-uppercase small">Brand Slogan / Subtitle</label>
-                                <input type="text" class="form-control" name="brand_tagline" value="<?php echo htmlspecialchars($brand_tagline); ?>" required>
+                                <input type="text" class="form-control" id="inputBrandTagline" name="brand_tagline" value="<?php echo htmlspecialchars($brand_tagline); ?>" oninput="document.getElementById('previewTagline').textContent = this.value.toUpperCase();" required>
                             </div>
-                            <div class="row g-2 mb-3">
+                            <div class="row g-2">
                                 <div class="col-6">
                                     <label class="form-label fw-bold text-uppercase small">Currency Symbol</label>
                                     <input type="text" class="form-control" name="currency_symbol" value="<?php echo htmlspecialchars($currency_symbol); ?>" required>
@@ -266,22 +357,6 @@ require_once 'includes/header.php';
                                 <div class="col-6">
                                     <label class="form-label fw-bold text-uppercase small">Currency ISO Code</label>
                                     <input type="text" class="form-control" name="currency_code" value="<?php echo htmlspecialchars($currency_code); ?>" required>
-                                </div>
-                            </div>
-                            <div class="row g-2">
-                                <div class="col-6">
-                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.7rem;">Logo & Shield Color</label>
-                                    <div class="d-flex align-items-center gap-1">
-                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="logo_primary_picker" value="<?php echo htmlspecialchars($logo_primary_color); ?>" oninput="document.getElementById('logo_primary_color').value = this.value;" style="width:34px; height:34px; cursor:pointer;">
-                                        <input type="text" class="form-control form-control-sm font-monospace" id="logo_primary_color" name="logo_primary_color" value="<?php echo htmlspecialchars($logo_primary_color); ?>" oninput="document.getElementById('logo_primary_picker').value = this.value;" required>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <label class="form-label fw-bold text-uppercase small" style="font-size:0.7rem;">Brand Text & Accent</label>
-                                    <div class="d-flex align-items-center gap-1">
-                                        <input type="color" class="form-control form-control-color p-0 border-0 rounded-2" id="logo_accent_picker" value="<?php echo htmlspecialchars($logo_accent_color); ?>" oninput="document.getElementById('logo_accent_color').value = this.value;" style="width:34px; height:34px; cursor:pointer;">
-                                        <input type="text" class="form-control form-control-sm font-monospace" id="logo_accent_color" name="logo_accent_color" value="<?php echo htmlspecialchars($logo_accent_color); ?>" oninput="document.getElementById('logo_accent_picker').value = this.value;" required>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -604,5 +679,94 @@ require_once 'includes/header.php';
         </div>
     </div>
 </div>
+
+<script>
+// Real-Time Logo Live Studio JS
+function togglePreviewBg(mode) {
+    const container = document.getElementById('logoPreviewContainer');
+    const btnDark = document.getElementById('btnPreviewDark');
+    const btnLight = document.getElementById('btnPreviewLight');
+    
+    if (mode === 'dark') {
+        container.style.background = '#103178';
+        btnDark.classList.add('active');
+        btnLight.classList.remove('active');
+    } else {
+        container.style.background = '#ffffff';
+        btnLight.classList.add('active');
+        btnDark.classList.remove('active');
+    }
+}
+
+function applyLogoPreset(bgColor, shieldColor, textColor) {
+    // Update inputs
+    document.getElementById('logo_bg_color').value = bgColor;
+    document.getElementById('logo_bg_picker').value = bgColor;
+    
+    document.getElementById('logo_shield_color').value = shieldColor;
+    document.getElementById('logo_shield_picker').value = shieldColor;
+    
+    document.getElementById('logo_text_color').value = textColor;
+    document.getElementById('logo_text_picker').value = textColor;
+    
+    updateLogoPreview();
+}
+
+function updateLogoColorsFromPicker() {
+    const bgColor = document.getElementById('logo_bg_picker').value;
+    const shieldColor = document.getElementById('logo_shield_picker').value;
+    const textColor = document.getElementById('logo_text_picker').value;
+    
+    document.getElementById('logo_bg_color').value = bgColor;
+    document.getElementById('logo_shield_color').value = shieldColor;
+    document.getElementById('logo_text_color').value = textColor;
+    
+    updateLogoPreview();
+}
+
+function syncPickerFromText(prefix) {
+    let textVal = document.getElementById(prefix + '_color').value.trim();
+    if (!textVal.startsWith('#') && /^[0-9A-F]{6}$/i.test(textVal)) {
+        textVal = '#' + textVal;
+    }
+    if (/^#[0-9A-F]{6}$/i.test(textVal)) {
+        document.getElementById(prefix + '_picker').value = textVal;
+        updateLogoPreview();
+    }
+}
+
+function updateLogoPreview() {
+    const bgColor = document.getElementById('logo_bg_picker').value;
+    const shieldColor = document.getElementById('logo_shield_picker').value;
+    const textColor = document.getElementById('logo_text_picker').value;
+    
+    // Live update preview elements
+    const crest = document.getElementById('previewCrest');
+    const shield = document.getElementById('previewShield');
+    const badge = document.getElementById('previewBadge');
+    const diamond = document.getElementById('previewDiamond');
+    const brandName = document.getElementById('previewBrandName');
+    const sparkle = document.getElementById('previewSparkle');
+    const adminBadge = document.getElementById('previewAdminBadge');
+    const tagline = document.getElementById('previewTagline');
+    
+    if (crest) {
+        crest.style.background = bgColor;
+        crest.style.borderColor = shieldColor;
+        crest.style.boxShadow = `0 4px 15px rgba(0,0,0,0.25), 0 0 14px ${bgColor}88`;
+    }
+    if (shield) shield.style.color = shieldColor;
+    if (badge) badge.style.background = shieldColor;
+    if (diamond) diamond.style.color = bgColor;
+    
+    if (brandName) brandName.parentElement.style.color = textColor;
+    if (sparkle) {
+        sparkle.setAttribute('fill', textColor);
+        sparkle.querySelector('path').setAttribute('fill', textColor);
+    }
+    if (adminBadge) adminBadge.style.backgroundColor = textColor;
+    if (tagline) tagline.style.color = textColor;
+}
+</script>
 
 <?php require_once 'includes/footer.php'; ?>
