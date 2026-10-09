@@ -152,15 +152,15 @@ if (!isset($active_type)) {
                     <i class="fa-solid fa-crown" style="position: absolute; font-size: 0.88rem; color: #ffffff; top: 14px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));"></i>
                     
                 </div>
-                <div class="lh-1">
-                    <div class="d-flex align-items-center" style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.2rem; color: <?php echo htmlspecialchars($logo_text_color); ?>; letter-spacing: 1.5px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="d-flex align-items-center" style="line-height: 1.05; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.2rem; color: <?php echo htmlspecialchars($logo_text_color); ?>; letter-spacing: 1.5px; text-shadow: 0 1px 2px rgba(0,0,0,0.05);">
                         <?php echo htmlspecialchars(strtoupper($system_name)); ?>
                         <!-- Solid 4-Point Filled Sparkle Star -->
                         <svg class="logo-sparkle-star" width="22" height="22" viewBox="0 0 24 24" fill="<?php echo htmlspecialchars($logo_text_color); ?>" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; margin-left: 6px; filter: drop-shadow(0 0 4px <?php echo htmlspecialchars($logo_text_color); ?>88);">
                             <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" fill="<?php echo htmlspecialchars($logo_text_color); ?>"/>
                         </svg>
                     </div>
-                    <span style="display:block; font-size:0.56rem; letter-spacing:5px; color:<?php echo htmlspecialchars($logo_text_color); ?>; font-weight:800; text-transform:uppercase; margin-top:3px; font-family:'Plus Jakarta Sans', sans-serif;"><?php echo htmlspecialchars($brand_tagline); ?></span>
+                    <span style="display:block; font-size:0.56rem; letter-spacing:5px; color:<?php echo htmlspecialchars($logo_text_color); ?>; font-weight:800; text-transform:uppercase; margin-top:6px; font-family:'Plus Jakarta Sans', sans-serif;"><?php echo htmlspecialchars($brand_tagline); ?></span>
                 </div>
             </a>
 
@@ -240,6 +240,8 @@ if (!isset($active_type)) {
         </div>
     </nav>
     <main>
+
+
 
 
 
