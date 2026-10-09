@@ -160,7 +160,7 @@ if (!isset($active_type)) {
                             <path d="M12 2L14.8 9.2L22 12L14.8 14.8L12 22L9.2 14.8L2 12L9.2 9.2L12 2Z" fill="<?php echo htmlspecialchars($logo_text_color); ?>"/>
                         </svg>
                     </div>
-                    <span style="display:block; font-size:0.56rem; letter-spacing:5px; color:<?php echo htmlspecialchars($logo_text_color); ?>; font-weight:800; text-transform:uppercase; margin-top:6px; font-family:'Plus Jakarta Sans', sans-serif;"><?php echo htmlspecialchars($brand_tagline); ?></span>
+                    <span style="display:block; font-size:0.56rem; letter-spacing:5px; color:<?php echo htmlspecialchars($logo_text_color); ?>; font-weight:800; text-transform:uppercase; margin-top:12px; font-family:'Plus Jakarta Sans', sans-serif;"><?php echo htmlspecialchars($brand_tagline); ?></span>
                 </div>
             </a>
 
@@ -240,6 +240,7 @@ if (!isset($active_type)) {
         </div>
     </nav>
     <main>
+
 
 
 
