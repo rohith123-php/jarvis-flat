@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Control Panel — M. Rohith Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- 1. LOGIN SCREEN -->
+  <div id="loginScreen" class="login-wrapper">
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="admin-shield-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h1 class="login-title">Portfolio Admin</h1>
+        <p class="login-subtitle">Sign in to manage site content, design tokens, and media.</p>
+      </div>
+
+      <form id="loginForm" class="login-form">
+        <div class="form-field">
+          <label for="loginUsername">Admin Username</label>
+          <input type="text" id="loginUsername" required autocomplete="username" placeholder="admin">
+        </div>
+
+        <div class="form-field">
+          <label for="loginPassword">Admin Password</label>
+          <input type="password" id="loginPassword" required autocomplete="current-password" placeholder="••••••••••••">
+        </div>
+
+        <div id="loginError" class="alert-box alert-error" style="display: none;"></div>
+
+        <button type="submit" id="loginSubmitBtn" class="btn btn-primary btn-block">
+          <span>Authenticate & Access Dashboard</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. DASHBOARD MAIN APP -->
+  <div id="adminApp" class="admin-layout" style="display: none;">
+    <!-- Top Bar -->
+    <header class="admin-topbar">
+      <div class="topbar-brand">
+        <span class="brand-badge">ADMIN</span>
+        <h2 class="topbar-title">M. Rohith — CMS Control Center</h2>
+      </div>
+
+      <div class="topbar-actions">
+        <a href="/" target="_blank" class="btn btn-subtle" title="Open public site in new tab">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <span>Live Site ↗</span>
+        </a>
+
+        <button id="discardChangesBtn" class="btn btn-subtle">
+          <span>Discard</span>
+        </button>
+
+        <button id="restoreBackupBtn" class="btn btn-subtle" title="Revert to prior content backup">
+          <span>Restore Backup</span>
+        </button>
+
+        <button id="saveAllBtn" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
+          </svg>
+          <span>Save Changes</span>
+        </button>
+
+        <button id="logoutBtn" class="btn btn-danger-subtle" title="Log out">
+          <span>Logout</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Notification Toast -->
+    <div id="toastNotification" class="toast-notification" style="display: none;"></div>
+
+    <!-- Main Workspace -->
+    <div class="admin-workspace">
+      <!-- Sidebar Navigation Tabs -->
+      <aside class="admin-sidebar">
+        <nav class="sidebar-nav">
+          <button class="nav-tab active" data-tab="tab-hero">
+            <span class="tab-icon">👤</span>
+            <span>Hero & Identity</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-about">
+            <span class="tab-icon">📝</span>
+            <span>About & Highlights</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-skills">
+            <span class="tab-icon">⚡</span>
+            <span>Skills & Tools</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-education">
+            <span class="tab-icon">🎓</span>
+            <span>Education</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-projects">
+            <span class="tab-icon">💻</span>
+            <span>Recent Projects</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-resume">
+            <span class="tab-icon">📄</span>
+            <span>Resume & Assets</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-contact">
+            <span class="tab-icon">✉️</span>
+            <span>Contact & Socials</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-theme">
+            <span class="tab-icon">🎨</span>
+            <span>Colors & Theme</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-inbox">
+            <span class="tab-icon">📬</span>
+            <span>Message Inbox</span>
+            <span id="inboxBadge" class="counter-badge" style="display: none;">0</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-settings">
+            <span class="tab-icon">🔒</span>
+            <span>Security & Passwords</span>
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Tab Content Area -->
+      <main class="admin-content-area">
+
+        <!-- TAB 1: HERO & IDENTITY -->
+        <section id="tab-hero" class="tab-panel active">
+          <div class="panel-header">
+            <h2 class="panel-title">Hero & Identity</h2>
+            <p class="panel-desc">Configure the header brand, your name, headline, status badge, and primary buttons.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label class="toggle-control">
+                <input type="checkbox" id="heroEnabled" checked>
+                <span class="toggle-label">Enable Hero Section on Public Site</span>
+              </label>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="heroNameInput">Full Name</label>
+                <input type="text" id="heroNameInput">
+              </div>
+              <div class="form-field">
+                <label for="heroTitleInput">Professional Title / Headline</label>
+                <input type="text" id="heroTitleInput">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="heroStatusInput">Availability Badge Status</label>
+              <input type="text" id="heroStatusInput">
+            </div>
+
+            <div class="form-field">
+              <label for="heroTaglineInput">One-line Tagline / Statement</label>
+              <textarea id="heroTaglineInput" rows="3"></textarea>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="heroCtaTextInput">Primary CTA Text</label>
+                <input type="text" id="heroCtaTextInput">
+              </div>
+              <div class="form-field">
+                <label for="heroCtaLinkInput">Primary CTA Target (#projects, etc.)</label>
+                <input type="text" id="heroCtaLinkInput">
+              </div>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="heroSecondaryCtaTextInput">Secondary CTA Text</label>
+                <input type="text" id="heroSecondaryCtaTextInput">
+              </div>
+              <div class="form-field">
+                <label for="heroSecondaryCtaLinkInput">Secondary CTA Target (#contact, etc.)</label>
+                <input type="text" id="heroSecondaryCtaLinkInput">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label>Profile Portrait Image</label>
+              <div class="media-preview-box">
+                <img id="heroImagePreview" src="/uploads/profile.jpg" alt="Profile preview">
+                <div class="media-upload-actions">
+                  <input type="file" id="profileImageUploadInput" accept="image/*" style="display: none;">
+                  <button type="button" class="btn btn-subtle" onclick="document.getElementById('profileImageUploadInput').click()">
+                    <span>Upload New Photo</span>
+                  </button>
+                  <p class="field-hint">Accepts JPG, PNG, WebP up to 10MB.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: ABOUT & HIGHLIGHTS -->
+        <section id="tab-about" class="tab-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">About Me & Highlights</h2>
+            <p class="panel-desc">Edit your personal biography, geographic location, status, and feature cards.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label class="toggle-control">
+                <input type="checkbox" id="aboutEnabled" checked>
+                <span class="toggle-label">Enable About Section</span>
+              </label>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="aboutTitleInput">Section Title</label>
+                <input type="text" id="aboutTitleInput">
+              </div>
+              <div class="form-field">
+                <label for="aboutSubtitleInput">Section Subtitle</label>
+                <input type="text" id="aboutSubtitleInput">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="aboutBioInput">Bio Narrative (Markdown or Plain Text)</label>
+              <textarea id="aboutBioInput" rows="5"></textarea>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="aboutLocationInput">Current Location</label>
+                <input type="text" id="aboutLocationInput">
+              </div>
+              <div class="form-field">
+                <label for="aboutAvailabilityInput">Availability Note</label>
+                <input type="text" id="aboutAvailabilityInput">
+              </div>
+            </div>
+
+            <div class="section-divider">
+              <div class="divider-header">
+                <h3>Highlight Cards</h3>
+                <button type="button" id="addHighlightBtn" class="btn btn-subtle btn-sm">+ Add Highlight</button>
+              </div>
+              <div id="highlightsList" class="items-editor-list">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: SKILLS & TOOLS -->
+        <section id="tab-skills" class="tab-panel">
+          <div class="panel-header">
+            <div class="panel-header-actions">
+              <div>
+                <h2 class="panel-title">Skills & Technologies</h2>
+                <p class="panel-desc">Manage categories (Languages, Frameworks, Tools) and technical tags.</p>
+              </div>
+              <button type="button" id="addSkillCategoryBtn" class="btn btn-subtle">+ Add Category</button>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label class="toggle-control">
+                <input type="checkbox" id="skillsEnabled" checked>
+                <span class="toggle-label">Enable Skills Section</span>
+              </label>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="skillsTitleInput">Section Title</label>
+                <input type="text" id="skillsTitleInput">
+              </div>
+              <div class="form-field">
+                <label for="skillsSubtitleInput">Section Subtitle</label>
+                <input type="text" id="skillsSubtitleInput">
+              </div>
+            </div>
+
+            <div id="skillsCategoriesList" class="categories-editor-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: EDUCATION -->
+        <section id="tab-education" class="tab-panel">
+          <div class="panel-header">
+            <div class="panel-header-actions">
+              <div>
+                <h2 class="panel-title">Education & Credentials</h2>
+                <p class="panel-desc">Add, edit, or reorder degree programs, schools, grades, and descriptions.</p>
+              </div>
+              <button type="button" id="addEducationBtn" class="btn btn-subtle">+ Add Education</button>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label class="toggle-control">
+                <input type="checkbox" id="educationEnabled" checked>
+                <span class="toggle-label">Enable Education Section</span>
+              </label>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="educationTitleInput">Section Title</label>
+                <input type="text" id="educationTitleInput">
+              </div>
+              <div class="form-field">
+                <label for="educationSubtitleInput">Section Subtitle</label>
+                <input type="text" id="educationSubtitleInput">
+              </div>
+            </div>
+
+            <div id="educationEntriesList" class="items-editor-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 5: RECENT PROJECTS -->
+        <section id="tab-projects" class="tab-panel">
+          <div class="panel-header">
+            <div class="panel-header-actions">
+              <div>
+                <h2 class="panel-title">Recent Projects</h2>
+                <p class="panel-desc">Showcase applications with title, description, tags, repo and live URLs.</p>
+              </div>
+              <button type="button" id="addProjectBtn" class="btn btn-subtle">+ Add Project</button>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label class="toggle-control">
+                <input type="checkbox" id="projectsEnabled" checked>
+                <span class="toggle-label">Enable Projects Section</span>
+              </label>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="projectsTitleInput">Section Title</label>
+                <input type="text" id="projectsTitleInput">
+              </div>
+              <div class="form-field">
+                <label for="projectsSubtitleInput">Section Subtitle</label>
+                <input type="text" id="projectsSubtitleInput">
+              </div>
+            </div>
+
+            <div id="projectsEditorList" class="items-editor-list">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 6: RESUME & ASSETS -->
+        <section id="tab-resume" class="tab-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Resume & File Assets</h2>
+            <p class="panel-desc">Upload a replacement PDF resume, configure display mode, and inspect files.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label class="toggle-control">
+                <input type="checkbox" id="resumeEnabled" checked>
+                <span class="toggle-label">Enable Resume Section</span>
+              </label>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="resumeTitleInput">Section Title</label>
+                <input type="text" id="resumeTitleInput">
+              </div>
+              <div class="form-field">
+                <label for="resumeDisplayModeSelect">Display Mode</label>
+                <select id="resumeDisplayModeSelect">
+                  <option value="both">Both (Download button & Inline Document Viewer)</option>
+                  <option value="download">Download Only</option>
+                  <option value="preview">Inline Preview Only</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="resumeDescInput">Description / Note</label>
+              <input type="text" id="resumeDescInput">
+            </div>
+
+            <div class="resume-upload-card">
+              <h3>Current Resume PDF</h3>
+              <p id="resumeCurrentPathText" class="current-file-path">/uploads/resume.pdf</p>
+
+              <div class="resume-upload-controls">
+                <input type="file" id="resumeFileUploadInput" accept="application/pdf" style="display: none;">
+                <button type="button" class="btn btn-primary" onclick="document.getElementById('resumeFileUploadInput').click()">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  <span>Upload Replacement Resume (PDF)</span>
+                </button>
+                <a id="previewResumeFileLink" href="/uploads/resume.pdf" target="_blank" class="btn btn-subtle">
+                  <span>Open PDF in Tab ↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 7: CONTACT & SOCIALS -->
+        <section id="tab-contact" class="tab-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Contact & Social Networks</h2>
+            <p class="panel-desc">Update contact email, form behavior, and manage social profiles.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label class="toggle-control">
+                <input type="checkbox" id="contactEnabled" checked>
+                <span class="toggle-label">Enable Contact Section</span>
+              </label>
+            </div>
+
+            <div class="field-row-2">
+              <div class="form-field">
+                <label for="contactTitleInput">Section Title</label>
+                <input type="text" id="contactTitleInput">
+              </div>
+              <div class="form-field">
+                <label for="contactEmailInput">Direct Contact Email</label>
+                <input type="email" id="contactEmailInput">
+              </div>
+            </div>
+
+            <div class="field-row">
+              <label class="toggle-control">
+                <input type="checkbox" id="contactFormEnabled" checked>
+                <span class="toggle-label">Enable Interactive Contact Form (Submissions appear in Inbox)</span>
+              </label>
+            </div>
+
+            <div class="section-divider">
+              <div class="divider-header">
+                <h3>Social Profiles</h3>
+                <button type="button" id="addSocialBtn" class="btn btn-subtle btn-sm">+ Add Social Link</button>
+              </div>
+              <div id="socialsEditorList" class="items-editor-list">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 8: THEME & COLOR TOKENS -->
+        <section id="tab-theme" class="tab-panel">
+          <div class="panel-header">
+            <div class="panel-header-actions">
+              <div>
+                <h2 class="panel-title">Color Scheme & Design Tokens</h2>
+                <p class="panel-desc">Customize colors with hex input and color pickers. Changes apply immediately sitewide without a rebuild.</p>
+              </div>
+              <div class="theme-action-buttons">
+                <button type="button" id="resetThemeDefaultsBtn" class="btn btn-subtle">Reset to Defaults</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preset Palettes -->
+          <div class="preset-palettes-bar">
+            <span class="palette-bar-label">Curated Presets:</span>
+            <button type="button" class="palette-pill" onclick="applyPreset('electricIndigo')">Electric Indigo</button>
+            <button type="button" class="palette-pill" onclick="applyPreset('emeraldTech')">Emerald Tech</button>
+            <button type="button" class="palette-pill" onclick="applyPreset('amberWarmth')">Warm Amber</button>
+            <button type="button" class="palette-pill" onclick="applyPreset('monoMinimal')">Monochrome</button>
+          </div>
+
+          <div class="theme-tokens-split">
+            <!-- Dark Mode Controls -->
+            <div class="token-group-card">
+              <h3>Dark Mode Design Tokens</h3>
+              <div class="token-fields" id="darkTokenFields">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <!-- Light Mode Controls -->
+            <div class="token-group-card">
+              <h3>Light Mode Design Tokens</h3>
+              <div class="token-fields" id="lightTokenFields">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 9: MESSAGE INBOX -->
+        <section id="tab-inbox" class="tab-panel">
+          <div class="panel-header">
+            <div class="panel-header-actions">
+              <div>
+                <h2 class="panel-title">Submitted Messages</h2>
+                <p class="panel-desc">Inquiries sent through the public contact form.</p>
+              </div>
+              <button type="button" id="refreshInboxBtn" class="btn btn-subtle">Refresh Messages</button>
+            </div>
+          </div>
+
+          <div id="inboxList" class="inbox-list-wrapper">
+            <!-- Populated dynamically -->
+          </div>
+        </section>
+
+        <!-- TAB 10: SECURITY & SETTINGS -->
+        <section id="tab-settings" class="tab-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Security & Credentials</h2>
+            <p class="panel-desc">Update your admin login password. Passwords are encrypted using bcrypt.</p>
+          </div>
+
+          <div class="form-grid" style="max-width: 500px;">
+            <form id="changePasswordForm">
+              <div class="form-field">
+                <label for="currentPasswordInput">Current Admin Password</label>
+                <input type="password" id="currentPasswordInput" required>
+              </div>
+
+              <div class="form-field">
+                <label for="newPasswordInput">New Admin Password</label>
+                <input type="password" id="newPasswordInput" required minlength="6" placeholder="At least 6 characters">
+              </div>
+
+              <div class="form-field">
+                <label for="confirmNewPasswordInput">Confirm New Password</label>
+                <input type="password" id="confirmNewPasswordInput" required minlength="6">
+              </div>
+
+              <button type="submit" id="savePasswordBtn" class="btn btn-primary">
+                <span>Update Password</span>
+              </button>
+            </form>
+
+            <div class="section-divider" style="margin-top: var(--space-8);">
+              <h3>Content Backup Snapshot</h3>
+              <p class="field-hint">A backup copy (`content.backup.json`) is recorded automatically before every save. You can click 'Restore Backup' in the top bar anytime to rollback unwanted edits.</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

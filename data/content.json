@@ -1,0 +1,212 @@
+{
+  "meta": {
+    "siteTitle": "M. Rohith — Frontend Developer",
+    "metaDescription": "Portfolio of M. Rohith, a frontend developer crafting responsive, modern, and accessible web experiences.",
+    "footerText": "© 2026 M. Rohith. Built with precision and semantic web standards."
+  },
+  "theme": {
+    "defaultMode": "dark",
+    "tokens": {
+      "dark": {
+        "bgPrimary": "#0B0F17",
+        "bgSurface": "#131D31",
+        "bgElevated": "#1A2640",
+        "textPrimary": "#F1F5F9",
+        "textMuted": "#94A3B8",
+        "borderColor": "#1E2B45",
+        "accentColor": "#3B82F6",
+        "accentHover": "#2563EB"
+      },
+      "light": {
+        "bgPrimary": "#F8FAFC",
+        "bgSurface": "#FFFFFF",
+        "bgElevated": "#F1F5F9",
+        "textPrimary": "#0F172A",
+        "textMuted": "#64748B",
+        "borderColor": "#E2E8F0",
+        "accentColor": "#2563EB",
+        "accentHover": "#1D4ED8"
+      }
+    }
+  },
+  "hero": {
+    "enabled": true,
+    "name": "M. Rohith",
+    "title": "Frontend Developer",
+    "tagline": "Crafting responsive, accessible, and high-performance web experiences with modern JavaScript, React, and clean CSS.",
+    "ctaText": "Explore Projects",
+    "ctaLink": "#projects",
+    "secondaryCtaText": "Get in Touch",
+    "secondaryCtaLink": "#contact",
+    "image": "/uploads/profile.jpg",
+    "status": "Available for opportunities"
+  },
+  "about": {
+    "enabled": true,
+    "sectionTitle": "About Me",
+    "sectionSubtitle": "Bridging thoughtful design with clean, maintainable engineering.",
+    "bio": "I am a frontend developer focused on building polished, intuitive web applications. I bridge design and engineering—writing semantic, scalable markup and maintainable stylesheets while ensuring fast load times and seamless user interactions across devices.",
+    "location": "Chennai, India",
+    "availability": "Open to internship & junior frontend opportunities",
+    "highlights": [
+      {
+        "title": "Modern Frontend Architecture",
+        "description": "Proficient in component-driven development using React and modern vanilla JavaScript with state management."
+      },
+      {
+        "title": "Pixel-Precision & Responsive Design",
+        "description": "Deep understanding of CSS Grid, Flexbox, media queries, and responsive typographic systems."
+      },
+      {
+        "title": "Accessibility & Performance",
+        "description": "Prioritizing fast Time-to-Interactive, semantic HTML5, keyboard navigation, and WCAG compliance."
+      }
+    ]
+  },
+  "skills": {
+    "enabled": true,
+    "sectionTitle": "Skills & Technologies",
+    "sectionSubtitle": "Tools and technologies I rely on to turn designs into robust applications.",
+    "categories": [
+      {
+        "name": "Core Languages",
+        "skills": [
+          "HTML5",
+          "CSS3 / Modern CSS",
+          "JavaScript (ES6+)",
+          "TypeScript"
+        ]
+      },
+      {
+        "name": "Tools & Workflow",
+        "skills": [
+          "Git",
+          "GitHub",
+          "Vite",
+          "VS Code",
+          "Figma",
+          "Chrome DevTools"
+        ]
+      },
+      {
+        "name": "Core Competencies",
+        "skills": [
+          "Responsive Layouts",
+          "Component Design",
+          "Web Accessibility (a11y)",
+          "Cross-Browser Testing"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "enabled": true,
+    "sectionTitle": "Education",
+    "sectionSubtitle": "Academic foundations and continuous technical learning.",
+    "entries": [
+      {
+        "id": "edu-1",
+        "degree": "Bachelor of Computer Applications (BCA)",
+        "institution": "Madras Christian College (MCC)",
+        "period": "2026 – Present",
+        "score": "Pursuing",
+        "description": "Key focus areas include Web Technologies, UI/UX Design, Relational Database Systems, and Computer Fundamentals."
+      },
+      {
+        "id": "edu-2",
+        "degree": "Higher Secondary Certificate (HSC - 12th Grade)",
+        "institution": "School Education Board",
+        "period": "Completed 2026",
+        "score": "520 / 600 (86.7%)",
+        "description": "Graduated with distinction with a core focus on mathematics and computer science."
+      }
+    ]
+  },
+  "projects": {
+    "enabled": true,
+    "sectionTitle": "Featured Projects",
+    "sectionSubtitle": "A selection of recent applications built with attention to code quality and user experience.",
+    "items": [
+      {
+        "id": "proj-1",
+        "title": "Restaurant Discovery & Ordering App",
+        "description": "A responsive, modern web application for browsing culinary dishes, filtering by dietary categories, and interactive table reservations with instant order summaries.",
+        "tags": [
+          "React",
+          "Tailwind CSS",
+          "JavaScript ES6+",
+          "Local Storage"
+        ],
+        "liveUrl": "https://github.com/rohith/restaurant-app",
+        "repoUrl": "https://github.com/rohith/restaurant-app",
+        "image": "/uploads/project-restaurant.svg",
+        "featured": true
+      },
+      {
+        "id": "proj-2",
+        "title": "Campus & Hostel Resident Portal",
+        "description": "A streamlined resident portal enabling college students to review facilities, track daily meal schedules, read campus announcements, and log maintenance tickets.",
+        "tags": [
+          "Semantic HTML5",
+          "CSS Grid",
+          "Flexbox",
+          "JavaScript",
+          "REST API"
+        ],
+        "liveUrl": "https://github.com/rohith/hostel-portal",
+        "repoUrl": "https://github.com/rohith/hostel-portal",
+        "image": "/uploads/project-campus.svg",
+        "featured": true
+      },
+      {
+        "id": "proj-3",
+        "title": "Personal Portfolio & Dynamic CMS",
+        "description": "A lightweight portfolio showcase paired with an administrative dashboard allowing live content editing, token-based color theming, and file uploads.",
+        "tags": [
+          "Node.js",
+          "Express",
+          "CSS Variables",
+          "Multer",
+          "Vanilla JS"
+        ],
+        "liveUrl": "#",
+        "repoUrl": "https://github.com/rohith/portfolio-cms",
+        "image": "/uploads/project-portfolio.svg",
+        "featured": true
+      }
+    ]
+  },
+  "resume": {
+    "enabled": true,
+    "sectionTitle": "Resume",
+    "sectionSubtitle": "Download or view my current resume and career summary.",
+    "file": "/uploads/resume.pdf",
+    "displayMode": "both",
+    "description": "Download a printer-friendly PDF copy of my resume, or view it directly in the page below."
+  },
+  "contact": {
+    "enabled": true,
+    "sectionTitle": "Let's Connect",
+    "sectionSubtitle": "Have a project in mind or an open role? Let's talk.",
+    "email": "rohith.dev@example.com",
+    "location": "Chennai, Tamil Nadu, India",
+    "formEnabled": true,
+    "socials": [
+      {
+        "platform": "GitHub",
+        "username": "github.com/rohith",
+        "url": "https://github.com"
+      },
+      {
+        "platform": "LinkedIn",
+        "username": "linkedin.com/in/rohith",
+        "url": "https://linkedin.com"
+      },
+      {
+        "platform": "Twitter / X",
+        "username": "@rohith_dev",
+        "url": "https://x.com"
+      }
+    ]
+  }
+}

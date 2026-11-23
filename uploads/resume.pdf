@@ -1,0 +1,67 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 958 >>
+stream
+BT
+/F1 20 Tf
+50 730 Td
+(M. Rohith - Frontend Developer) Tj
+/F1 11 Tf
+0 -26 Td
+(Email: rohith.dev@example.com | Location: Chennai, India) Tj
+0 -36 Td
+/F1 14 Tf
+(EDUCATION) Tj
+/F1 11 Tf
+0 -22 Td
+(Bachelor of Computer Applications (BCA) - Madras Christian College (2026 - Present)) Tj
+0 -18 Td
+(Higher Secondary Certificate (12th Grade) - Completed 2026 (520/600, 86.7%)) Tj
+0 -36 Td
+/F1 14 Tf
+(TECHNICAL SKILLS) Tj
+/F1 11 Tf
+0 -22 Td
+(Languages: HTML5, CSS3, JavaScript (ES6+), TypeScript) Tj
+0 -18 Td
+(Frameworks & Libraries: React.js, Next.js, Tailwind CSS) Tj
+0 -18 Td
+(Tools & Platforms: Git, GitHub, Vite, VS Code, Figma) Tj
+0 -36 Td
+/F1 14 Tf
+(FEATURED PROJECTS) Tj
+/F1 11 Tf
+0 -22 Td
+(1. Restaurant Discovery & Ordering App - React, Tailwind CSS, LocalStorage) Tj
+0 -18 Td
+(2. Campus & Hostel Resident Portal - Semantic HTML5, CSS Grid/Flexbox, JavaScript) Tj
+0 -18 Td
+(3. Personal Portfolio & CMS Engine - Node.js, Express, CSS Custom Properties) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001250 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1320
+%%EOF
