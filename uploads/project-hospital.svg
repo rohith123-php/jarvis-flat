@@ -1,0 +1,32 @@
+<svg width="800" height="480" viewBox="0 0 800 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="480" fill="#0D131F"/>
+  <rect x="40" y="40" width="720" height="400" rx="16" fill="#141E33" stroke="#233554" stroke-width="2"/>
+  <!-- Top bar -->
+  <rect x="70" y="70" width="660" height="45" rx="8" fill="#1C2A47"/>
+  <!-- Red Cross icon -->
+  <rect x="90" y="86" width="16" height="6" rx="2" fill="#EF4444"/>
+  <rect x="95" y="81" width="6" height="16" rx="2" fill="#EF4444"/>
+  <rect x="120" y="84" width="160" height="16" rx="4" fill="#3B82F6"/>
+  <rect x="620" y="84" width="90" height="16" rx="4" fill="#10B981"/>
+  <!-- Dashboard grid -->
+  <rect x="70" y="135" width="200" height="120" rx="10" fill="#19253F" stroke="#2B3D66"/>
+  <rect x="90" y="155" width="110" height="14" rx="3" fill="#E2E8F0"/>
+  <rect x="90" y="180" width="80" height="26" rx="4" fill="#3B82F6"/>
+  <rect x="90" y="220" width="140" height="10" rx="2" fill="#64748B"/>
+
+  <rect x="300" y="135" width="200" height="120" rx="10" fill="#19253F" stroke="#2B3D66"/>
+  <rect x="320" y="155" width="120" height="14" rx="3" fill="#E2E8F0"/>
+  <rect x="320" y="180" width="80" height="26" rx="4" fill="#10B981"/>
+  <rect x="320" y="220" width="140" height="10" rx="2" fill="#64748B"/>
+
+  <rect x="530" y="135" width="200" height="120" rx="10" fill="#19253F" stroke="#2B3D66"/>
+  <rect x="550" y="155" width="100" height="14" rx="3" fill="#E2E8F0"/>
+  <rect x="550" y="180" width="80" height="26" rx="4" fill="#F59E0B"/>
+  <rect x="550" y="220" width="130" height="10" rx="2" fill="#64748B"/>
+
+  <!-- Table panel -->
+  <rect x="70" y="275" width="660" height="135" rx="10" fill="#17223B" stroke="#233554"/>
+  <rect x="95" y="295" width="140" height="14" rx="3" fill="#E2E8F0"/>
+  <rect x="95" y="325" width="610" height="24" rx="4" fill="#1E2B45"/>
+  <rect x="95" y="360" width="610" height="24" rx="4" fill="#1E2B45"/>
+</svg>

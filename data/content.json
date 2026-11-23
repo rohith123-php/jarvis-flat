@@ -117,7 +117,7 @@
         "degree": "Higher Secondary Certificate (HSC - 12th Grade)",
         "institution": "School Education Board",
         "period": "Completed 2026",
-        "score": "520 / 600 (86.7%)",
+        "score": "510 / 600 (85.7%)",
         "description": "Graduated with distinction with a core focus on mathematics and computer science."
       }
     ]
@@ -129,39 +129,53 @@
     "items": [
       {
         "id": "proj-1",
-        "title": "Restaurant Discovery & Ordering App",
-        "description": "A responsive, modern web application for browsing culinary dishes, filtering by dietary categories, and interactive table reservations with instant order summaries.",
+        "title": "Restaurant Ordering & Menu App",
+        "description": "A responsive frontend web application for exploring restaurant dishes, browsing dietary categories, and interactive table reservations with stateful cart management.",
         "tags": [
-          "React",
-          "Tailwind CSS",
-          "JavaScript ES6+",
-          "Local Storage"
+          "JavaScript",
+          "HTML5",
+          "CSS3",
+          "UI/UX"
         ],
-        "liveUrl": "https://github.com/rohith/restaurant-app",
-        "repoUrl": "https://github.com/rohith/restaurant-app",
+        "liveUrl": "https://github.com/rohith123-php/restaurant",
+        "repoUrl": "https://github.com/rohith123-php/restaurant",
         "image": "/uploads/project-restaurant.svg",
         "featured": true
       },
       {
         "id": "proj-2",
-        "title": "Campus & Hostel Resident Portal",
-        "description": "A streamlined resident portal enabling college students to review facilities, track daily meal schedules, read campus announcements, and log maintenance tickets.",
+        "title": "MCC Learning & Academic Portal",
+        "description": "A tailored web learning and resource portal developed for Madras Christian College students with structured subject materials and responsive interfaces.",
         "tags": [
-          "Semantic HTML5",
-          "CSS Grid",
-          "Flexbox",
-          "JavaScript",
-          "REST API"
+          "Blade",
+          "HTML5",
+          "CSS3",
+          "JavaScript"
         ],
-        "liveUrl": "https://github.com/rohith/hostel-portal",
-        "repoUrl": "https://github.com/rohith/hostel-portal",
+        "liveUrl": "https://github.com/rohith123-php/mcc-learning",
+        "repoUrl": "https://github.com/rohith123-php/mcc-learning",
         "image": "/uploads/project-campus.svg",
         "featured": true
       },
       {
         "id": "proj-3",
+        "title": "Hospital Management System",
+        "description": "A comprehensive healthcare management dashboard designed for hospital operations, patient record logging, and medical appointment tracking.",
+        "tags": [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "Admin Portal"
+        ],
+        "liveUrl": "https://github.com/rohith123-php/HOSPITAL-MANAGEMENT",
+        "repoUrl": "https://github.com/rohith123-php/HOSPITAL-MANAGEMENT",
+        "image": "/uploads/project-hospital.svg",
+        "featured": true
+      },
+      {
+        "id": "proj-4",
         "title": "Personal Portfolio & Dynamic CMS",
-        "description": "A lightweight portfolio showcase paired with an administrative dashboard allowing live content editing, token-based color theming, and file uploads.",
+        "description": "A lightweight personal portfolio showcase paired with an administrative dashboard allowing live content editing, token-based color theming, and file uploads.",
         "tags": [
           "Node.js",
           "Express",
@@ -169,8 +183,8 @@
           "Multer",
           "Vanilla JS"
         ],
-        "liveUrl": "#",
-        "repoUrl": "https://github.com/rohith/portfolio-cms",
+        "liveUrl": "https://github.com/rohith123-php/jarvis-flat",
+        "repoUrl": "https://github.com/rohith123-php/jarvis-flat",
         "image": "/uploads/project-portfolio.svg",
         "featured": true
       }
@@ -194,8 +208,8 @@
     "socials": [
       {
         "platform": "GitHub",
-        "username": "github.com/rohith",
-        "url": "https://github.com"
+        "username": "github.com/rohith123-php",
+        "url": "https://github.com/rohith123-php"
       },
       {
         "platform": "LinkedIn",
