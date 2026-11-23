@@ -161,28 +161,30 @@ button, input, textarea {
   height: 4.5rem;
 }
 
-/* Brand Logo Styled like [T.] TAHIRA */
+/* Standard Professional Brand Logo */
 .brand-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
   color: var(--text-primary);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.brand-logo:hover {
+  opacity: 0.85;
 }
 
 .brand-accent {
-  background-color: var(--accent-color);
-  color: #FFFFFF;
-  padding: 0.2rem 0.55rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 900;
-  display: inline-block;
-  line-height: 1.2;
+  color: var(--accent-color);
+  font-weight: 800;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  display: inline;
 }
 
 .site-nav {
@@ -410,26 +412,14 @@ button, input, textarea {
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.35rem 0.85rem 0.35rem 0.35rem;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem;
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
   font-size: var(--text-xs);
   color: var(--text-muted);
   margin-bottom: var(--space-6);
-}
-
-.hero-badge .badge-pill {
-  background-color: var(--accent-color);
-  color: #FFFFFF;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-full);
 }
 
 .status-dot {
@@ -446,38 +436,24 @@ button, input, textarea {
   50% { opacity: 0.5; transform: scale(0.85); }
 }
 
-/* Giant Bold Grotesque Headline matching reference */
-.hero-headline {
+/* Standard Professional Hero Typography */
+.hero-name {
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 3.5rem;
-  line-height: 1.1;
-  color: #FFFFFF;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  line-height: 1.15;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
-[data-theme="light"] .hero-headline {
-  color: #0B132B;
-}
-
-.hero-greeting-prefix {
-  display: inline;
-}
-
-.hero-name-highlight {
-  display: inline;
-}
-
-.hero-role-heading {
+.hero-title {
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 3.25rem;
-  line-height: 1.1;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
   color: var(--accent-color);
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
   margin-bottom: var(--space-6);
 }
 
@@ -1507,11 +1483,11 @@ button, input, textarea {
    RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 1024px) {
-  .hero-headline {
+  .hero-name {
     font-size: 2.85rem;
   }
-  .hero-role-heading {
-    font-size: 2.65rem;
+  .hero-title {
+    font-size: 2rem;
   }
   .about-grid,
   .hero-grid {
@@ -1559,11 +1535,11 @@ button, input, textarea {
   .btn-pill-nav {
     display: none;
   }
-  .hero-headline {
+  .hero-name {
     font-size: 2.25rem;
   }
-  .hero-role-heading {
-    font-size: 2.1rem;
+  .hero-title {
+    font-size: 1.65rem;
   }
   .section-headline-lg {
     font-size: 1.85rem;
