@@ -1,67 +1,142 @@
 %PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<<
+/F1 2 0 R /F2 3 0 R /F3 7 0 R /F4 8 0 R
+>>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<< /Length 958 >>
-stream
-BT
-/F1 20 Tf
-50 730 Td
-(M. Rohith - Frontend Developer) Tj
-/F1 11 Tf
-0 -26 Td
-(Email: rohith.dev@example.com | Location: Chennai, India) Tj
-0 -36 Td
-/F1 14 Tf
-(EDUCATION) Tj
-/F1 11 Tf
-0 -22 Td
-(Bachelor of Computer Applications (BCA) - Madras Christian College (2026 - Present)) Tj
-0 -18 Td
-(Higher Secondary Certificate (12th Grade) - Completed 2026 (520/600, 86.7%)) Tj
-0 -36 Td
-/F1 14 Tf
-(TECHNICAL SKILLS) Tj
-/F1 11 Tf
-0 -22 Td
-(Languages: HTML5, CSS3, JavaScript (ES6+), TypeScript) Tj
-0 -18 Td
-(Frameworks & Libraries: React.js, Next.js, Tailwind CSS) Tj
-0 -18 Td
-(Tools & Platforms: Git, GitHub, Vite, VS Code, Figma) Tj
-0 -36 Td
-/F1 14 Tf
-(FEATURED PROJECTS) Tj
-/F1 11 Tf
-0 -22 Td
-(1. Restaurant Discovery & Ordering App - React, Tailwind CSS, LocalStorage) Tj
-0 -18 Td
-(2. Campus & Hostel Resident Portal - Semantic HTML5, CSS Grid/Flexbox, JavaScript) Tj
-0 -18 Td
-(3. Personal Portfolio & CMS Engine - Node.js, Express, CSS Custom Properties) Tj
-ET
-endstream
+<<
+/A <<
+/S /URI /Type /Action /URI (mailto:rohith.dev@example.com)
+>> /Border [ 0 0 0 ] /Rect [ 231.2255 690.8 327.7175 701 ] /Subtype /Link /Type /Annot
+>>
 endobj
 5 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/rohith123-php)
+>> /Border [ 0 0 0 ] /Rect [ 340.1445 690.8 436.526 701 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://linkedin.com)
+>> /Border [ 0 0 0 ] /Rect [ 448.953 690.8 496.1875 701 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Helvetica-BoldOblique /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/rohith123-php/restaurant)
+>> /Border [ 0 0 0 ] /Rect [ 496.911 362.9375 572 374.9375 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/rohith123-php/mcc-learning)
+>> /Border [ 0 0 0 ] /Rect [ 485.572 320.4375 572 332.4375 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/rohith123-php/HOSPITAL-MANAGEMENT)
+>> /Border [ 0 0 0 ] /Rect [ 466.702 277.9375 572 289.9375 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/rohith123-php/jarvis-flat)
+>> /Border [ 0 0 0 ] /Rect [ 500.685 235.4375 572 247.4375 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R 9 0 R 10 0 R 11 0 R 12 0 R ] /Contents 17 0 R /MediaBox [ 0 0 612 792 ] /Parent 16 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+14 0 obj
+<<
+/PageMode /UseNone /Pages 16 0 R /Type /Catalog
+>>
+endobj
+15 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261123225739+05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261123225739+05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+>>
+endobj
+16 0 obj
+<<
+/Count 1 /Kids [ 13 0 R ] /Type /Pages
+>>
+endobj
+17 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 3016
+>>
+stream
+Gau`U>BALj&q801ka1+GG!X\b,5\[59C/ab3C_<^<r$;X%5>'6BL`\q\'C%!4X5fA,7)5t:0^3f8Mf0crUoo-@t9ShL3a:F!#G[+%h13d#c;"^RLR(j%"]#iqd<BIg+IWI]G\K5FN=,M)`5HPIFePFFR5$*Js^u%KoFR9\B4m)28N8XR]]oGe4n2-I(UFeE&Q/&me63$\GQWK2[KBemB,\f_Jf4YD2."B1L>R3gSJmo(0I"MD(lr.F'Zs>(H%G$dOmnRf;IhgDKK+c1iriWJC^t7_fO3K3#g`1h?8J#54f(e#M6HF_&`Fg/p^fj"S_l29s?C#H]pqBFeccnfC/(7h!Jdh@60\4AneaUIV$"Qq6l!#>O!<a0?n[)h7YgC'#If`O9LR$L."H<Y*+SQ!+kcTKAh+;]BYl6@1[h3o!oO`jZi!RZ:JK*KmZ`][`=84g1uF)'p!D6o5\'Q[+ab,I@o>)Q9<QN,qFK+@;a&tkq$,tDELQchXWK4I.N<K^?gNrh<,<*H?91J.K>H;d]ejL*/?SU7U;S@L<??.3#gc2%L83>ea6**)CG3R;>9Ln[E"7j3e$J@g)7*SlCJNTD`MD7X[/F-a#_]fh--p/&&@nc*P!4DA6O`L=[*Z66ShArAD6q'+gZ3f:NOD42A_<!3K8P7&M/1PQ:-0?$BF$'=+.ZU0i+cF2b<:IGnK![5]R^(8<=7+F2>/POT]tmNp2M>1F=0=JhLg>oK,6rRtMIs$Pm6\bj*!7$(@\Qak2cbTZF'F:Z\-Er6eKtOYES6`ZAVpOZih<e!Ph7BD@8eA&5&oPh#q0i!W\N8LR]0_o(/8ir8o8@gh]Q$1ep;#,>t3"hi$r.bDAm&_4U,b06,&=cP\l@*4BQ.ef%j/pL@66i\Pn=t2IhBZ=Wj/j>X*disP7p^1r`ktJ%RarS?d@Q6-S+A'jF+<j3)dP*<WeM*k_F9BFNF'L=epVg`Dk%lqoA'h)Xi:@epL`rik]Fi:[gR!:_a!jsKp%Q1G.Qe.9pUtHpE7er]f/Y8cFDu'"?;Xe]Q51tPf$"!jJUV_q)b@hb95N+.OBts)faTS[h-DK0E&R"S*^6TCCuF[h*_b%8#"DI6b/g+aXjt^D$M4K.k6OKWI#=CGdNV1XFuLOp-6PK&',jZbO=/`n$E#(A;mTbRRkN#Rp_%_)/,aQ%PVbahXF)gdf/j]^BR4sPRSsfUBm!+E,a*-jZ=3n<D;W1n)m;6^[tYU'SE$Un3`bKt%5C\*gTHg,j?S[/TNDZ?,5VNC`p+5aE1ZQdcPXo;Bo,j>&X@d-P=Ld5R(Qri?/W^!X7Q5g+O&"q+mZu0^kT/+/20I;?=S5@@WO)q!QkZNh>VJH0F?p4a"W=,1B$-_'+qoQs!.+3'!!&XBL5(H+VHHTUEX>L<@KZ10./nrUQJ(uT*:)8)tMd(;4q%:0-n+k`gFok/Q7+`j_[r&lJ.N@lQ"#M8"4p.oDZ$R[-_7F?s0[u;+"C=*V5i->/m^AgnQj?)e(33aA@:fcB;"qj?JamOCFAXW;@jt^ITgoOaN1BL4#;(kO^$!S9.:_gV2Lb9X].#V%sJcQT%u/.F\9=FaZF+7o6X@>*Xi*9/h;#QaVCF['MTmNkfFAV[D$58S/-odHo=Wrsej")uh<82fog%@"]^s,k;Tm@2RJ^O8O>4o8c=<RPjB<i$G5]QTL0r".Glg=`n6a)[\.8cWiSDZ7dN_'5GklnZ"N46*uk972=OVj_,#+hc&U^9YCs5SNen:ZcT!WRo3s4HNI]YUsTK8'4>gH;&LV'8KIYk4Bh3%K#i=O.,+4QZ?U3%=4GLi3l,hMiL;![/P&P"0>=*b4&La@@*Gqs`U]ViR&:+TXFA4n$.ch_`9(,[DG$>.>uHQU()X_bDpmJ*1Ks(8DUh(YR,ot,2.@CU&o'SGZ`JQupbT?aW,6)<TDd\;"#X4%X0I7\rfIksh%b;skQ^d*K0E\lrFO=`p6K[@o1iQ-/Z3Z3!B1pJB>"LU7l,W!4?VYo'E\/$\.t-@$k\4=RM8Zdf2J-q[mi4;6[QN=mV0qWk&0k14/6SbE];RZhR2ju9.J`"TlgbGYdL\t#6U$IefSGpRg+'U@]Tu][72TTb/3WS`%"ULaj\7XHZL$6ruU1""CsA`@8\R-Wo4;d-QUja-h:)@9f-6M$,T_LM-)Zk7gVofe,h(LB,h*FPf:1*LpEqoXs9fa@4ISn:uhT[-M?PKpjQ)5F_VI3OOp;#+V?`77k*?YBQ#G-/#Q'CNG+fZ3Er`f@rusdkL18r/qn#<l;L*;/>SAojlnJnoS.8*_C"Gj<H^E"O*Wt!VF2[URTHM9b_;SQ]EQeh_lZXdO"\QBMeiXa[V*;`g!q"qaBjO.40G<cm[Z9(gl(QB@si<=Q_R@`k@c`iX2gpA_(*D9Pe7Qp\S6?)W1\Sp/Br34.,']cq^P!'!BVl$"[8H<-(??6*s)H6h-.jjTZZ<f<42rb2XU;rQ*4qQ>8D`<6.]0OdgToQQ'H2YZ5cbY9-E@"A!^(3Q-CR<="mW4Nc`nI)Wr?BBE*g5^Z8Ot-FP.^TXU'fTMMlhUR[IZ#Me2Ql'A#gqAYQ'Xg*lXbM1/6.d13J8"W<;?NW6*h$8)O4\Am"SEPT9`Y(mt6Md4831hF^;'=6fWB8;H5sIc<"-r@^aHMoMT&NaqhLa&(pVqT89hN@A*,j*=3K8o@7HCBK39Iuu&ptgL3frZ$7t2?TY;VWg7U8?oTmd?*85<R7kjo.l/'=3L+tQ=0U;I.kBfG&'qNX(`kn#tS,#crr8^UHX1QK-(In>HlmG;OI-4mq0ppZ)a:/&A7/H&[ZGPD!4&a,2:qT^&!H+CpQYeLdTA6F6tP7;ZKET:A-)kD1^YZ6%OO?G2T\;g>AI"J^hm<!L).:JsBOs4%m,+hg0>@'mPZ4c(I#q`\N<dIjGA=<TmK=hs$Eajo-MCdqhFUr+BrQ'9,iRk;^WKbc,+lXD\r^=6n;a4`s"nL5)(9BifV'8omSI2O0^TLg="c.IeKhNSf>':bRFgL4Jq!\OUBt6V~>endstream
 endobj
 xref
-0 6
+0 18
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000001250 00000 n 
+0000000061 00000 n 
+0000000122 00000 n 
+0000000229 00000 n 
+0000000341 00000 n 
+0000000514 00000 n 
+0000000689 00000 n 
+0000000852 00000 n 
+0000000967 00000 n 
+0000001086 00000 n 
+0000001275 00000 n 
+0000001467 00000 n 
+0000001666 00000 n 
+0000001857 00000 n 
+0000002110 00000 n 
+0000002180 00000 n 
+0000002461 00000 n 
+0000002522 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<<
+/ID 
+[<75cea44cad30ca562ca4476b689fa049><75cea44cad30ca562ca4476b689fa049>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 15 0 R
+/Root 14 0 R
+/Size 18
+>>
 startxref
-1320
+5630
 %%EOF

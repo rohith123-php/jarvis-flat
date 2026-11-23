@@ -195,8 +195,8 @@
     "sectionTitle": "Resume",
     "sectionSubtitle": "Download or view my current resume and career summary.",
     "file": "/uploads/resume.pdf",
-    "displayMode": "both",
-    "description": "Download a printer-friendly PDF copy of my resume, or view it directly in the page below."
+    "displayMode": "download",
+    "description": "Download a printer-friendly PDF copy of my resume, or click below to preview the document."
   },
   "contact": {
     "enabled": true,
