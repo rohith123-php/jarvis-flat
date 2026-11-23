@@ -8,24 +8,24 @@
     "defaultMode": "dark",
     "tokens": {
       "dark": {
-        "bgPrimary": "#0B0F17",
-        "bgSurface": "#131D31",
-        "bgElevated": "#1A2640",
-        "textPrimary": "#F1F5F9",
-        "textMuted": "#94A3B8",
-        "borderColor": "#1E2B45",
-        "accentColor": "#3B82F6",
-        "accentHover": "#2563EB"
+        "bgPrimary": "#070E1B",
+        "bgSurface": "#0C192E",
+        "bgElevated": "#11233D",
+        "textPrimary": "#FFFFFF",
+        "textMuted": "#8EA3BF",
+        "borderColor": "#162947",
+        "accentColor": "#1A7DF0",
+        "accentHover": "#1565C0"
       },
       "light": {
-        "bgPrimary": "#F8FAFC",
+        "bgPrimary": "#F4F7FC",
         "bgSurface": "#FFFFFF",
-        "bgElevated": "#F1F5F9",
-        "textPrimary": "#0F172A",
-        "textMuted": "#64748B",
-        "borderColor": "#E2E8F0",
-        "accentColor": "#2563EB",
-        "accentHover": "#1D4ED8"
+        "bgElevated": "#EAF0F9",
+        "textPrimary": "#0B132B",
+        "textMuted": "#5A6B82",
+        "borderColor": "#D5E0EE",
+        "accentColor": "#1A7DF0",
+        "accentHover": "#1565C0"
       }
     }
   },
