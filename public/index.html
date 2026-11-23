@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio of M. Rohith, a frontend developer crafting responsive, modern, and accessible web experiences.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -62,10 +62,7 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="hero-badge" id="heroStatusBadge">
-            <span class="status-pulse-wrapper">
-              <span class="status-pulse"></span>
-              <span class="status-dot"></span>
-            </span>
+            <span class="status-dot"></span>
             <span id="heroStatusText">Available for opportunities</span>
           </div>
 
@@ -85,37 +82,11 @@
             </a>
             <a href="#contact" class="btn btn-secondary" id="heroCtaSecondary">Get in Touch</a>
           </div>
-
-          <div class="hero-tech-strip">
-            <span class="tech-strip-label">FOCUS & TOOLKIT</span>
-            <div class="tech-strip-tags">
-              <span class="tech-pill">React.js</span>
-              <span class="tech-pill">JavaScript ES6+</span>
-              <span class="tech-pill">TypeScript</span>
-              <span class="tech-pill">Tailwind CSS</span>
-              <span class="tech-pill">Semantic HTML5</span>
-              <span class="tech-pill">Node.js / Express</span>
-            </div>
-          </div>
         </div>
 
         <div class="hero-media">
-          <div class="portrait-card-wrapper">
-            <div class="portrait-frame">
-              <img id="heroImage" src="/uploads/profile.jpg" alt="M. Rohith — Frontend Developer" width="480" height="560" loading="eager">
-              <div class="portrait-badge">
-                <div class="badge-icon-box">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                  </svg>
-                </div>
-                <div class="badge-text-box">
-                  <span class="badge-title">Madras Christian College</span>
-                  <span class="badge-sub">BCA Scholar • 2026–Present</span>
-                </div>
-              </div>
-            </div>
+          <div class="portrait-frame">
+            <img id="heroImage" src="/uploads/profile.jpg" alt="M. Rohith — Frontend Developer" width="480" height="560" loading="eager">
           </div>
         </div>
       </div>
@@ -130,26 +101,6 @@
           <p class="section-subtitle" id="aboutSubtitle">Bridging thoughtful design with clean, maintainable engineering.</p>
         </header>
 
-        <!-- Metrics Row -->
-        <div class="about-metrics-row">
-          <div class="metric-card">
-            <span class="metric-value">4+</span>
-            <span class="metric-label">Active GitHub Projects</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">86.7%</span>
-            <span class="metric-label">12th Grade Board Score</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">MCC</span>
-            <span class="metric-label">BCA Computer Applications</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-value">100%</span>
-            <span class="metric-label">Responsive & Semantic</span>
-          </div>
-        </div>
-
         <div class="about-grid">
           <div class="about-narrative">
             <p class="about-bio" id="aboutBio">
@@ -161,7 +112,7 @@
                 <span class="meta-value" id="aboutLocation">Chennai, India</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">Availability</span>
+                <span class="meta-label">Status</span>
                 <span class="meta-value" id="aboutAvailability">Open to opportunities</span>
               </div>
             </div>
@@ -271,16 +222,7 @@
               
               <div class="direct-email-box">
                 <span class="meta-label">Email Address</span>
-                <div class="email-copy-bar">
-                  <a href="mailto:rohith.dev@example.com" id="contactEmail" class="email-link">rohith.dev@example.com</a>
-                  <button type="button" id="copyEmailBtn" class="copy-btn" title="Copy email address" aria-label="Copy email address">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                    <span id="copyBtnText">Copy</span>
-                  </button>
-                </div>
+                <a href="mailto:rohith.dev@example.com" id="contactEmail" class="email-link">rohith.dev@example.com</a>
               </div>
 
               <div class="social-links-box">
