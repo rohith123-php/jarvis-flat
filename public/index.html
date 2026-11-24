@@ -243,9 +243,32 @@
           </p>
         </header>
 
-        <div class="projects-grid" id="projectsGrid">
-          <!-- Populated dynamically -->
+        <!-- Horizontal Slider -->
+        <div class="projects-slider-wrapper" id="projectsSliderWrapper">
+          <!-- Prev Arrow -->
+          <button class="slider-arrow slider-arrow-prev" id="sliderPrevBtn" aria-label="Previous project">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Track -->
+          <div class="projects-slider-track" id="projectsSliderTrack">
+            <div class="projects-grid" id="projectsGrid">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- Next Arrow -->
+          <button class="slider-arrow slider-arrow-next" id="sliderNextBtn" aria-label="Next project">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
+
+        <!-- Dot Indicators -->
+        <div class="slider-dots" id="sliderDots" aria-label="Project navigation dots"></div>
       </div>
     </section>
 

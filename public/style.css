@@ -869,10 +869,28 @@ button, input, textarea {
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Horizontal Slider Wrapper */
+.projects-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Slider Track — hidden overflow, smooth scroll */
+.projects-slider-track {
+  overflow: hidden;
+  flex: 1;
+  border-radius: var(--radius-lg);
+}
+
+/* Grid becomes a horizontal flex row of fixed-width cards */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.75rem;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .project-card {
@@ -884,6 +902,74 @@ button, input, textarea {
   flex-direction: column;
   transition: all var(--transition-normal);
   position: relative;
+  /* Fixed width so 2 cards show at a time */
+  flex: 0 0 calc(50% - 0.875rem);
+  min-width: calc(50% - 0.875rem);
+}
+
+/* Slider Arrow Buttons */
+.slider-arrow {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.slider-arrow:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.slider-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.slider-arrow-prev { margin-right: 1rem; }
+.slider-arrow-next { margin-left: 1rem; }
+
+/* Dot Indicators */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--border-color);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.slider-dot.active {
+  width: 24px;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.slider-dot:hover:not(.active) {
+  background-color: var(--text-muted);
 }
 
 .project-card:hover {
@@ -1501,8 +1587,9 @@ button, input, textarea {
     max-width: 440px;
     margin: 0 auto;
   }
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .project-card {
+    flex: 0 0 calc(50% - 0.875rem);
+    min-width: calc(50% - 0.875rem);
   }
   .contact-grid {
     grid-template-columns: 1fr;

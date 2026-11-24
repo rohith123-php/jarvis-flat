@@ -261,6 +261,9 @@ function renderPage(data) {
           </div>
         </article>
       `).join('');
+
+      // Initialize horizontal slider after cards are rendered
+      requestAnimationFrame(() => initProjectsSlider());
     }
   } else {
     projSec.style.display = 'none';
@@ -474,4 +477,94 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
+}
+
+/* ==========================================================================
+   PROJECTS HORIZONTAL SLIDER
+   ========================================================================== */
+function initProjectsSlider() {
+  const grid = document.getElementById('projectsGrid');
+  const prevBtn = document.getElementById('sliderPrevBtn');
+  const nextBtn = document.getElementById('sliderNextBtn');
+  const dotsContainer = document.getElementById('sliderDots');
+
+  if (!grid || !prevBtn || !nextBtn) return;
+
+  const cards = Array.from(grid.querySelectorAll('.project-card'));
+  if (cards.length === 0) return;
+
+  // How many cards visible at once (2 on desktop, 1 on mobile)
+  const visibleCount = () => window.innerWidth <= 640 ? 1 : 2;
+  let currentIndex = 0;
+
+  // Build dot buttons
+  function buildDots() {
+    if (!dotsContainer) return;
+    const total = Math.ceil(cards.length / visibleCount());
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i * visibleCount()));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  // Update dot active state
+  function updateDots() {
+    if (!dotsContainer) return;
+    const dots = dotsContainer.querySelectorAll('.slider-dot');
+    const activeDotIndex = Math.floor(currentIndex / visibleCount());
+    dots.forEach((d, i) => d.classList.toggle('active', i === activeDotIndex));
+  }
+
+  // Update arrow disabled state
+  function updateArrows() {
+    const maxIndex = Math.max(0, cards.length - visibleCount());
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+  }
+
+  // Slide to a specific card index
+  function goTo(index) {
+    const maxIndex = Math.max(0, cards.length - visibleCount());
+    currentIndex = Math.max(0, Math.min(index, maxIndex));
+
+    // Calculate translateX based on card width + gap
+    const trackEl = document.getElementById('projectsSliderTrack');
+    if (!trackEl || cards.length === 0) return;
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 28; // 1.75rem gap in px
+    const offset = currentIndex * (cardWidth + gap);
+    grid.style.transform = `translateX(-${offset}px)`;
+
+    updateDots();
+    updateArrows();
+  }
+
+  // Arrow click handlers
+  prevBtn.addEventListener('click', () => goTo(currentIndex - visibleCount()));
+  nextBtn.addEventListener('click', () => goTo(currentIndex + visibleCount()));
+
+  // Touch swipe support
+  let touchStartX = 0;
+  grid.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  grid.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goTo(currentIndex + visibleCount());
+      else goTo(currentIndex - visibleCount());
+    }
+  }, { passive: true });
+
+  // Rebuild on resize
+  window.addEventListener('resize', () => {
+    buildDots();
+    goTo(0);
+  }, { passive: true });
+
+  // Init
+  buildDots();
+  goTo(0);
 }
