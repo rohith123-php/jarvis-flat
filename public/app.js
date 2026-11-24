@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
   setupContactForm();
   setupResumeModal();
   setupScrollspy();
+  setupScrollReveal();
+  setupCursorGlow();
+  setupScrolledHeader();
+  setupTypewriter();
 });
 
 /* ==========================================================================
@@ -567,4 +571,106 @@ function initProjectsSlider() {
   // Init
   buildDots();
   goTo(0);
+}
+
+/* ==========================================================================
+   SCROLL REVEAL — IntersectionObserver
+   ========================================================================== */
+function setupScrollReveal() {
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-stagger');
+  if (!revealEls.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+}
+
+/* ==========================================================================
+   TYPEWRITER EFFECT — Hero Title
+   ========================================================================== */
+function setupTypewriter() {
+  const titles = [
+    'Frontend Developer',
+    'UI/UX Enthusiast',
+    'React Developer',
+    'Web Designer',
+    'Open to Opportunities'
+  ];
+  const el = document.getElementById('heroTitleText');
+  if (!el) return;
+
+  let titleIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+  let isPaused = false;
+
+  function type() {
+    const current = titles[titleIdx];
+    if (isPaused) {
+      isPaused = false;
+      setTimeout(type, 1800);
+      return;
+    }
+    if (!isDeleting) {
+      el.textContent = current.slice(0, charIdx + 1);
+      charIdx++;
+      if (charIdx === current.length) {
+        isPaused = true;
+        isDeleting = true;
+        setTimeout(type, 100);
+        return;
+      }
+      setTimeout(type, 85);
+    } else {
+      el.textContent = current.slice(0, charIdx - 1);
+      charIdx--;
+      if (charIdx === 0) {
+        isDeleting = false;
+        titleIdx = (titleIdx + 1) % titles.length;
+      }
+      setTimeout(type, 45);
+    }
+  }
+
+  // Start after a short delay
+  setTimeout(type, 1200);
+}
+
+/* ==========================================================================
+   CURSOR GLOW — follows mouse
+   ========================================================================== */
+function setupCursorGlow() {
+  const cursor = document.getElementById('cursorGlow');
+  if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
+
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   SCROLLED HEADER — adds glass blur on scroll
+   ========================================================================== */
+function setupScrolledHeader() {
+  const header = document.getElementById('siteHeader');
+  if (!header) return;
+
+  const toggle = () => {
+    if (window.scrollY > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', toggle, { passive: true });
+  toggle(); // Run once on load
 }

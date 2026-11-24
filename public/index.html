@@ -7,10 +7,19 @@
   <meta name="description" content="Portfolio of M. Rohith, a frontend developer crafting responsive, modern, and accessible web experiences.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Custom cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
   <!-- Header / Navigation -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
@@ -72,7 +81,7 @@
 
           <!-- Standard Professional Main Headlines -->
           <h1 class="hero-name" id="heroName">M. Rohith</h1>
-          <p class="hero-title" id="heroTitle">Frontend Developer</p>
+          <p class="hero-title" id="heroTitle"><span id="heroTitleText">Frontend Developer</span><span class="typewriter-cursor"></span></p>
 
           <p class="hero-tagline" id="heroTagline">
             Crafting responsive, accessible, and high-performance web experiences with modern JavaScript, React, and clean CSS.
@@ -157,7 +166,7 @@
     </section>
 
     <!-- 2. About Me Section -->
-    <section id="about" class="section about-section">
+    <section id="about" class="section about-section reveal">
       <div class="container">
         <div class="about-grid">
           <!-- Left Column: Portrait Showcase Card with Concentric Rings -->
@@ -273,7 +282,7 @@
     </section>
 
     <!-- 4. Skills & Services Section ("SERVICES I AM PROVIDING") -->
-    <section id="skills" class="section skills-section">
+    <section id="skills" class="section skills-section reveal">
       <div class="container">
         <header class="section-header">
           <div class="section-kicker-pill">
@@ -294,7 +303,7 @@
     </section>
 
     <!-- 5. Education Section -->
-    <section id="education" class="section education-section">
+    <section id="education" class="section education-section reveal">
       <div class="container">
         <header class="section-header">
           <div class="section-kicker-pill">
@@ -315,7 +324,7 @@
     </section>
 
     <!-- 6. Resume Section -->
-    <section id="resume" class="section resume-section">
+    <section id="resume" class="section resume-section reveal">
       <div class="container">
         <div class="resume-card">
           <div class="resume-card-body">
@@ -354,7 +363,7 @@
     </section>
 
     <!-- 7. Contact Section -->
-    <section id="contact" class="section contact-section">
+    <section id="contact" class="section contact-section reveal">
       <div class="container">
         <header class="section-header">
           <div class="section-kicker-pill">
