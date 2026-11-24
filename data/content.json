@@ -139,7 +139,7 @@
         ],
         "liveUrl": "https://github.com/rohith123-php/restaurant",
         "repoUrl": "https://github.com/rohith123-php/restaurant",
-        "image": "/uploads/project-restaurant.svg",
+        "image": "/uploads/project-restaurant.png",
         "featured": true
       },
       {
@@ -154,7 +154,7 @@
         ],
         "liveUrl": "https://github.com/rohith123-php/mcc-learning",
         "repoUrl": "https://github.com/rohith123-php/mcc-learning",
-        "image": "/uploads/project-campus.svg",
+        "image": "/uploads/project-mcc.png",
         "featured": true
       },
       {
@@ -169,7 +169,7 @@
         ],
         "liveUrl": "https://github.com/rohith123-php/HOSPITAL-MANAGEMENT",
         "repoUrl": "https://github.com/rohith123-php/HOSPITAL-MANAGEMENT",
-        "image": "/uploads/project-hospital.svg",
+        "image": "/uploads/project-hospital.png",
         "featured": true
       },
       {
@@ -185,7 +185,7 @@
         ],
         "liveUrl": "https://github.com/rohith123-php/jarvis-flat",
         "repoUrl": "https://github.com/rohith123-php/jarvis-flat",
-        "image": "/uploads/project-portfolio.svg",
+        "image": "/uploads/project-portfolio.png",
         "featured": true
       }
     ]
